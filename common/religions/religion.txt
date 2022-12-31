@@ -127,7 +127,7 @@ animist = {
 }
 
 zombie = {
-	texture = "gfx/interface/icons/religion_icons/animist.dds"
+	texture = "gfx/interface/icons/religion_icons/zombie.dds"
 	traits = {
 		animist
 	}
