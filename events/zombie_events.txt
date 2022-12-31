@@ -1,9 +1,9 @@
-namespace = neighbor_events
+namespace = zombie
 
 zombie.2 = {
 	type = country_event
-	placement = scope:neighbor_country
-
+	placement = scope:neighbor_state
+	
 	title = zombie_events.1.t
 	desc = zombie_events.1.d
 	flavor = zombie_events.1.f
@@ -15,7 +15,7 @@ zombie.2 = {
 	trigger = {
 		exists = c:ZOM
         this = c:ZOM
-		any_neighbouring_country = {
+		any_neighbouring_state = {
 			owner = {
 				NOT = { is_country_type = decentralized }
 			}
@@ -23,8 +23,10 @@ zombie.2 = {
 	}
 
 	immediate = {
-		save_neighbor_with_country = {
-			CRITERIA = "religion = root.religion"
+		save_neighbor_with_state = {
+			owner = {
+				NOT = { is_country_type = decentralized }
+			}
 		}
 	}
 
@@ -42,19 +44,5 @@ zombie.2 = {
 		}
 		save_scope_as = originator
 		scope:neighbor_country = { post_notification = neighbor_events_1 }
-	}
-
-	option = {
-		name = zombie_events.1.b
-		default_option = yes
-		every_interest_group = {
-			limit = {
-				has_ideology = ideology_anti_clerical
-			}
-			add_modifier = {
-				name = nation_above_faith
-				months = normal_modifier_time
-			}
-		}
 	}
 }
