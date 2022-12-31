@@ -1,0 +1,11 @@
+﻿# Zombie
+ZOM = {
+	color = { 142  144  11 }
+	
+	country_type = unrecognized
+
+	tier = hegemony
+	
+	cultures = { zombie }
+	capital = STATE_URGA
+}
