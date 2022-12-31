@@ -1,8 +1,5 @@
 COUNTRIES = {
 	c:ZOM = {
-		effect_starting_technology_tier_7_tech = no
-		effect_starting_politics_traditional = yes
-		effect_native_conscription_3 = yes
 		activate_law = law_type:law_anarchy
 		activate_law = law_type:council_republic
 		activate_law = law_type:isolationism
