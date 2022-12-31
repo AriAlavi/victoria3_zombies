@@ -2,6 +2,7 @@ namespace = zombie
 
 zombie.2 = {
 	type = country_event
+	placement = root
 	
 	title = zombie_events.1.t
 	desc = zombie_events.1.d
@@ -11,20 +12,21 @@ zombie.2 = {
 
 	duration = 1
 
-	trigger = {
-		any_neighbouring_state = {
-			owner = {
-				NOT = { is_country_type = decentralized }
-			}
-		}
-	}
-
 	option = {
 		name = zombie_events.1.a
-		ig:ig_devout = {
-			add_modifier = {
-				name = faith_above_nation
-				months = normal_modifier_time
+		every_country = {
+			limit = {
+				is_adjacent = ROOT
+			}
+			change_relations = {
+				country = ROOT
+				value = -100
+			}
+			create_diplomatic_play = {
+				name = zombie_invasion
+				war = yes
+				type = dp_humiliate
+				target_state = ROOT.capital
 			}
 		}
 	}
