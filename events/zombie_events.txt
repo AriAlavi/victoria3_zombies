@@ -1,0 +1,51 @@
+zombie.2 = {
+	type = country_event # can be country_event, character_event, or state_event
+	placement = root
+	title = zombie_event.1.a
+	desc = zombie_event.1.a
+	flavor = zombie_event.1.a
+	icon = "gfx/interface/icons/event_icons/event_skull.dds"
+
+	immediate = {
+		random_diplomatic_play = {
+			limit = {
+				target = c:PNI
+			}
+            initiater = {
+                save_scope_as = initiator_scope
+            }
+			save_scope_as =  pni_dp_scope
+		}
+    }
+    
+    trigger = {
+        exists = c:ZOM
+        this = c:ZOM
+	}
+
+	event_image = {
+		video = "gfx/event_pictures/middleeast_courtroom_upheaval.bk2"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/middleeast/courtroom_upheaval"
+
+	option = {
+		name = example_event.2.1
+		highlighted_option = yes
+		change_infamy = -150
+        trigger = {
+            ROOt = { is_diplomatic_play_enemy_of = scope:initiator_scope } # I wonder if it can be repalced by scope:pni_dp_scope.initiator
+        }
+    }
+    
+	option = {
+		name = example_event.2.2
+		highlighted_option = yes
+        add_era_researched = era_1
+        add_era_researched = era_2
+        add_era_researched = era_3
+        add_era_researched = era_4
+        add_era_researched = era_5
+    }
+}
