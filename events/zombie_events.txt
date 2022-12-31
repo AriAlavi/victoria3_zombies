@@ -9,6 +9,11 @@ zombie.2 = {
 	flavor = zombie_events.1.f
 
 	icon = "gfx/interface/icons/event_icons/event_skull.dds"
+	
+	trigger = {
+        exists = c:ZOM
+        ROOT = c:ZOM
+	}
 
 	duration = 1
 
@@ -17,16 +22,25 @@ zombie.2 = {
 		every_country = {
 			limit = {
 				is_adjacent = ROOT
+				NOT = {has_war_with = ROOT}
 			}
 			change_relations = {
 				country = ROOT
-				value = -100
+				value = -400
 			}
+			save_scope_as = target_country
 			create_diplomatic_play = {
 				name = zombie_invasion
 				war = yes
-				type = dp_humiliate
+				type = dp_annex_war
 				target_state = ROOT.capital
+				
+				add_war_goal = {
+					holder = ROOT
+					type = dp_annex_war
+					target_state = scope:target_country.capital
+				}
+				
 			}
 		}
 	}
