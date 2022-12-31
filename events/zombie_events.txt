@@ -1,51 +1,60 @@
+namespace = neighbor_events
+
 zombie.2 = {
-	type = country_event # can be country_event, character_event, or state_event
-	placement = root
-	title = zombie_event.1.a
-	desc = zombie_event.1.a
-	flavor = zombie_event.1.a
+	type = country_event
+	placement = scope:neighbor_country
+
+	title = zombie_events.1.t
+	desc = zombie_events.1.d
+	flavor = zombie_events.1.f
+
 	icon = "gfx/interface/icons/event_icons/event_skull.dds"
 
-	immediate = {
-		random_diplomatic_play = {
-			limit = {
-				target = c:PNI
-			}
-            initiater = {
-                save_scope_as = initiator_scope
-            }
-			save_scope_as =  pni_dp_scope
-		}
-    }
-    
-    trigger = {
-        exists = c:ZOM
+	duration = 1
+
+	trigger = {
+		exists = c:ZOM
         this = c:ZOM
+		any_neighbouring_country = {
+			owner = {
+				NOT = { is_country_type = decentralized }
+			}
+		}
 	}
 
-	event_image = {
-		video = "gfx/event_pictures/middleeast_courtroom_upheaval.bk2"
+	immediate = {
+		save_neighbor_with_country = {
+			CRITERIA = "religion = root.religion"
+		}
 	}
 
-	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
-	on_opened_soundeffect = "event:/SFX/Events/middleeast/courtroom_upheaval"
+	option = {
+		name = zombie_events.1.a
+		change_relations = {
+			country = scope:neighbor_country
+			value = 30
+		}
+		ig:ig_devout = {
+			add_modifier = {
+				name = faith_above_nation
+				months = normal_modifier_time
+			}
+		}
+		save_scope_as = originator
+		scope:neighbor_country = { post_notification = neighbor_events_1 }
+	}
 
 	option = {
-		name = example_event.2.1
-		highlighted_option = yes
-		change_infamy = -150
-        trigger = {
-            ROOt = { is_diplomatic_play_enemy_of = scope:initiator_scope } # I wonder if it can be repalced by scope:pni_dp_scope.initiator
-        }
-    }
-    
-	option = {
-		name = example_event.2.2
-		highlighted_option = yes
-        add_era_researched = era_1
-        add_era_researched = era_2
-        add_era_researched = era_3
-        add_era_researched = era_4
-        add_era_researched = era_5
-    }
+		name = zombie_events.1.b
+		default_option = yes
+		every_interest_group = {
+			limit = {
+				has_ideology = ideology_anti_clerical
+			}
+			add_modifier = {
+				name = nation_above_faith
+				months = normal_modifier_time
+			}
+		}
+	}
 }
