@@ -4,5 +4,9 @@ COUNTRIES = {
 		effect_starting_politics_traditional = yes
 		effect_native_conscription_3 = yes
 		activate_law = law_type:law_chiefdom
+
+		add_modifier = {
+			name = zombie_nation_modifier
+		}
 	}
 }
