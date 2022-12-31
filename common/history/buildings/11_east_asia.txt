@@ -1201,7 +1201,6 @@
 	}
 	s:STATE_URGA={
 		region_state:ZOM={
-			}
 		}
 	}
 	s:STATE_CAMBODIA={
