@@ -2,7 +2,7 @@ namespace = zombie
 
 zombie.2 = {
 	type = country_event
-	placement = scope:neighbor_state
+	placement = scope:neighbor_country
 	
 	title = zombie_events.1.t
 	desc = zombie_events.1.d
@@ -15,18 +15,8 @@ zombie.2 = {
 	trigger = {
 		exists = c:ZOM
         this = c:ZOM
-		any_neighbouring_state = {
-			owner = {
-				NOT = { is_country_type = decentralized }
-			}
-		}
-	}
-
-	immediate = {
-		save_neighbor_with_state = {
-			owner = {
-				NOT = { is_country_type = decentralized }
-			}
+		any_neighbouring_country = {
+			save_scope_as = neighbor_country
 		}
 	}
 
@@ -42,7 +32,5 @@ zombie.2 = {
 				months = normal_modifier_time
 			}
 		}
-		save_scope_as = originator
-		scope:neighbor_country = { post_notification = neighbor_events_1 }
 	}
 }
