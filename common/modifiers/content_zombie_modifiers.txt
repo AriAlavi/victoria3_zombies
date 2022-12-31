@@ -10,4 +10,10 @@ zombie_nation_modifier = {
 	country_authority_mult = -100
 	country_influence_mult = -100
 	country_bureaucracy_mult = -100
+	country_revolution_secession_speed_mult = -100
+	state_migration_pull_mult = -100
+	state_education_access_add = -100
+	country_military_weekly_innovation_mult = -100
+	country_production_weekly_innovation_mult = -100
+	country_society_weekly_innovation_mult = -100
 }
