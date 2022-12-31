@@ -1,6 +1,6 @@
 ﻿zombie{
 	color= rgb{ 142 144 111 }
-	religion = protestant
+	religion = zombie
 	traits = { anglophone celtic_people european_heritage }
 	
 	male_common_first_names={

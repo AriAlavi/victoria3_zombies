@@ -1,0 +1,14 @@
+CHARACTERS = {
+	c:ZOM = {
+		create_character = {
+			first_name = Zombie
+			last_name = Z
+			culture = cu:zombie
+			ruler = yes
+			ig_leader = yes
+			interest_group = ig_landowners
+			ideology = ideology_radical
+			birth_date = 1820.1.1
+				}				
+			}
+		}
