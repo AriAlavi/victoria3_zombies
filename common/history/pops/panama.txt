@@ -1,0 +1,10 @@
+﻿POPS = {
+	s:STATE_PANAMA = {
+		region_state:ZOM = {
+			create_pop = {
+				culture = zombie
+				size = 87792
+			}
+		}
+	}
+}
