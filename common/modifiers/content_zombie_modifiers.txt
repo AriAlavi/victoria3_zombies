@@ -1,4 +1,4 @@
-zombie_state_modifier = {
+zombie_nation_modifier = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_lightbulb_negative.dds
 	state_standard_of_living_add = -100
 	state_mortality_mult = 50
