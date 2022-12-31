@@ -1,0 +1,34 @@
+﻿zombie{
+	color= rgb{ 142 144 111 }
+	religion = protestant
+	traits = { anglophone celtic_people european_heritage }
+	
+	male_common_first_names={
+		Zombie
+	}
+	female_common_first_names = {
+		Zombie
+	}
+	common_last_names={
+		Zombie
+	}
+
+	noble_last_names = {
+		Zombie
+	}
+	
+	male_regal_first_names = {
+		# populate with names here
+	}
+	female_regal_first_names = {
+		# populate with names here
+	}
+	regal_last_names = {
+		# populate with names here
+	}	
+	
+	ethnicities = {
+		1 = caucasian
+	}
+	graphics = european
+}
