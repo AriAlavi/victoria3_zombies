@@ -1,0 +1,11 @@
+﻿african = {}
+
+asian = {}
+
+european = {}
+
+generic = {}
+
+mideast_indian = {}
+
+zombie = {}

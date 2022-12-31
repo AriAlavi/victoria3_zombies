@@ -30,7 +30,7 @@
 	ethnicities = {
 		1 = caucasian
 	}
-	graphics = european
+	graphics = zombie
 }
 
 welsh={
