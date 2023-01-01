@@ -49,13 +49,18 @@ zombie.2 = {
 	immediate = {
 		every_diplomatic_play = {
 			limit = {
-				initiator = {
-					has_war_with = c:ZOM
+				OR = {
+					target = c:ZOM
+					initiator = c:ZOM
 				}
 			}
 			war = {
 				if = {
-					limit = { exists = attacker_warleader }
+					limit = { 
+						attacker_warleader = {
+							total_population > 10000
+						} 
+					}
 					add_war_war_support = {
 						target = attacker_warleader
 						value = 1000
@@ -71,7 +76,11 @@ zombie.2 = {
 					}
 				}
 				if = {
-					limit = { exists = defender_warleader }
+					limit = { 
+						defender_warleader = {
+							total_population > 10000
+						} 
+					}
 					add_war_war_support = {
 						target = defender_warleader
 						value = 1000
@@ -507,6 +516,7 @@ zombie.6 = {
 zombie.7 = {
 	type = country_event
 	placement = ROOT
+	hidden = yes
 	trigger = {
 		exists = c:ZOM
 		this = c:ZOM
