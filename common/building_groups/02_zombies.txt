@@ -28,6 +28,6 @@ bg_zombie = {
 	hires_unemployed_only = no
 	fired_pops_become_radical = no
 	can_use_slaves = no
-	always_possible = no
+	always_possible = yes
 }
 
