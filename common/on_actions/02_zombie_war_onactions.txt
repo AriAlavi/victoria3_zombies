@@ -2,5 +2,6 @@ on_monthly_pulse_country = {
 	events = {
 		zombie.1 # Go war
 		zombie.2 # infinite war support
+		zombie.4 # create zombie buildings
 	}
 }

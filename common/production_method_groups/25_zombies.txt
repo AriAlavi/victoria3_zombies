@@ -3,6 +3,6 @@
 	ai_selection = most_productive
 
 	production_methods = {
-		pm_irregular_infantry
+		pm_zombie_infantry
 	}
 }

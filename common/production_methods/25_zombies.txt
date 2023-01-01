@@ -1,0 +1,26 @@
+﻿pm_zombie_infantry = {
+	texture = "gfx/interface/icons/production_method_icons/irregular_infantry.dds"
+	is_default = yes
+	building_modifiers = {
+		workforce_scaled = {
+		}
+
+		level_scaled = {
+			building_employment_zombies_add = 970
+			building_training_rate_add = 10000
+		}
+
+		throughput_scaled = {
+			unit_offense_add = 30
+			unit_defense_add = 25
+		}
+
+		unscaled = {
+			unit_morale_loss_mult = -1
+			unit_recovery_rate_add = 1
+			unit_kill_rate_add  = 0.25
+			unit_morale_damage_mult = 0.5
+			unit_devastation_mult = 10
+		}
+	}
+}
