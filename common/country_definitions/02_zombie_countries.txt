@@ -9,3 +9,16 @@ ZOM = {
 	cultures = { zombie }
 	capital = STATE_URGA
 }
+
+# Uncolonized Zombie
+
+BIE = {
+	color = { 205 214 205 }
+	
+	country_type = decentralized
+
+	tier = principality
+	
+	cultures = { zombie }
+	capital = STATE_URGA
+}

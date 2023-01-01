@@ -2,8 +2,10 @@ on_monthly_pulse_country = {
 	events = {
 		zombie.1 # Go war
 		zombie.2 # infinite war support
-		zombie.3 # automatic change province owner
+		zombie.3 # automatic change province owner to zombie
 		zombie.4 # create zombie buildings
 		zombie.5 # convert pops to zombies
+		zombie.7 # decolonize automatically
+		zombie.8 # automatic change province owner to zombie attacker
 	}
 }

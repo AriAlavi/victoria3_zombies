@@ -1,0 +1,24 @@
+COUNTRIES = {
+	c:ZOM = {
+		activate_law = law_type:law_anarchy
+		activate_law = law_type:law_council_republic
+		activate_law = law_type:law_isolationism
+		activate_law = law_type:law_ethnostate
+		activate_law = law_type:law_state_religion
+		activate_law = law_type:law_elected_bureaucrats 
+		activate_law = law_type:law_mass_conscription
+		activate_law = law_type:law_no_home_affairs
+		activate_law = law_type:law_consumption_based_taxation
+		activate_law = law_type:law_no_colonial_affairs
+		activate_law = law_type:law_no_police
+		activate_law = law_type:law_no_schools
+		activate_law = law_type:law_no_health_system
+		activate_law = law_type:law_outlawed_dissent
+		activate_law = law_type:law_serfdom_banned
+		activate_law = law_type:law_child_labor_allowed
+		activate_law = law_type:law_womens_suffrage
+		activate_law = law_type:law_no_social_security
+		activate_law = law_type:law_closed_borders
+		activate_law = law_type:law_slavery_banned
+	}
+}
