@@ -22,6 +22,7 @@ zombie.1 = {
 			limit = {
 				is_adjacent = ROOT
 				NOT = {has_war_with = ROOT}
+				NOT = { is_country_type = decentralized }
 			}
 			change_relations = {
 				country = ROOT
@@ -91,34 +92,29 @@ zombie.2 = {
 
 zombie.3 = {
 	type = country_event
-	title = zombie_events.3.t
-	desc = zombie_events.3.d
-	flavor = zombie_events.3.f
+	placement = ROOT
 	hidden = yes
-	
-	icon = "gfx/interface/icons/event_icons/event_skull.dds"
-	
+
 	trigger = {
 		exists = c:ZOM
 		this = c:ZOM
 	}
+
 	immediate = {
 		every_state = {
-			if = {
-				limit = {
-					controller = c:ZOM
-					NOT = { owner = c:ZOM }
-				}
-				set_state_owner = c:ZOM
+			limit = {
+				controller = c:ZOM
+				NOT = { owner = c:ZOM }
 			}
-			if = {
-				limit = {
-					NOT = { controller = c:ZOM }
-					owner = c:ZOM
-				}
-				set_state_owner = controller
-			}
+			set_state_owner = c:ZOM
 
+		}
+		every_state = {
+			limit = {
+				NOT = { controller = c:ZOM }
+				owner = c:ZOM
+			}
+			set_state_owner = controller
 		}
 	}
 }
