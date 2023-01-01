@@ -51,6 +51,7 @@ zombie.2 = {
 	title = zombie_events.2.t
 	desc = zombie_events.2.d
 	flavor = zombie_events.2.f
+	hidden = yes
 
 	icon = "gfx/interface/icons/event_icons/event_skull.dds"
 	
@@ -87,4 +88,31 @@ zombie.2 = {
 			}	
 		}
 	}
+}
+
+zombie.3 = {
+	type = country_event
+	title = zombie_events.3.t
+	desc = zombie_events.3.d
+	flavor = zombie_events.3.f
+	hidden = yes
+	
+	icon = "gfx/interface/icons/event_icons/event_skull.dds"
+	
+	trigger = {
+		exists = c:ZOM
+		this = c:ZOM
+	}
+	immediate = {
+		every_state_region = {
+			set_owner_of_provinces = {
+				country = c:ZOM
+				provinces = {
+					always = yes
+				}
+			}
+		}
+	}
+	
+	
 }
