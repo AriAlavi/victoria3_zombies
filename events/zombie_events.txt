@@ -5,6 +5,7 @@ zombie.1 = {
 	title = zombie_events.1.t
 	desc = zombie_events.1.d
 	flavor = zombie_events.1.f
+	hidden = yes
 
 	icon = "gfx/interface/icons/event_icons/event_skull.dds"
 	
@@ -16,7 +17,7 @@ zombie.1 = {
 
 	duration = 1
 
-	option = {
+	immediate = {
 		name = zombie_events.1.a
 		every_country = {
 			limit = {
@@ -36,7 +37,7 @@ zombie.1 = {
 				
 				add_war_goal = {
 					holder = ROOT
-					type = dp_annex_war
+					type = annex_country
 					target_state = scope:target_country.capital
 				}
 				
