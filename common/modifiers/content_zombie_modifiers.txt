@@ -5,16 +5,17 @@ zombie_nation_modifier = {
 	unit_offense_mult = 0.50
 	unit_defense_mult = 0.20
 	country_tax_income_add = 100000000
-	country_legitimacy_base_add = -1000
-	country_authority_mult = -100
-	country_influence_mult = -100
-	country_bureaucracy_mult = -100
-	country_revolution_secession_speed_mult = -100
-	state_migration_pull_mult = -100
+	country_legitimacy_base_add = -1
+	country_authority_mult = -1
+	country_influence_mult = -1
+	country_bureaucracy_mult = -1
+	country_revolution_secession_speed_mult = -1
+	state_migration_pull_mult = -1
 	state_education_access_add = -100
-	country_military_weekly_innovation_mult = -100
-	country_production_weekly_innovation_mult = -100
-	country_society_weekly_innovation_mult = -100
+	country_military_weekly_innovation_mult = -1
+	country_production_weekly_innovation_mult = -1
+	country_society_weekly_innovation_mult = -1
+	country_prestige_mult = -1
 }
 
 zombie_insane_frenzy_modifier = {
