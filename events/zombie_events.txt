@@ -207,10 +207,6 @@ zombie.4 = {
 						remove_building = building_munition_plants
 						remove_building = building_electrics_industry
 						remove_building = building_war_machine_industry
-						state_region = {
-							add_devastation = 100
-						}
-						
 					}
 					
 				}

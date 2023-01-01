@@ -6,7 +6,7 @@
 		}
 
 		level_scaled = {
-			building_employment_zombies_add = 1000000
+			building_employment_zombies_add = 1000
 			building_training_rate_add = 10000
 		}
 
@@ -22,6 +22,7 @@
 			unit_kill_rate_add  = 0.25
 			unit_morale_damage_mult = 0.5
 			unit_devastation_mult = 10
+			unit_provinces_captured_mult = 1
 		}
 	}
 }

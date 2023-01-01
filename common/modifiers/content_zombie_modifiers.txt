@@ -2,8 +2,8 @@ zombie_nation_modifier = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_lightbulb_negative.dds
 	state_standard_of_living_add = -100
 	state_mortality_mult = 5
-	unit_offense_mult = 0.15
-	unit_defense_mult = -0.15
+	unit_offense_mult = 0.50
+	unit_defense_mult = 0.20
 	country_tax_income_add = 100000000
 	country_legitimacy_base_add = -1000
 	country_authority_mult = -100
@@ -19,19 +19,19 @@ zombie_nation_modifier = {
 
 zombie_insane_frenzy_modifier = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_lightbulb_negative.dds
-	unit_offense_add = 15
-	unit_defense_add = 20
+	unit_offense_add = 20
+	unit_defense_add = 25
 }
 
 
 zombie_frenzy_modifier = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_lightbulb_negative.dds
-	unit_offense_add = 15
-	unit_defense_add = 20
+	unit_offense_add = 20
+	unit_defense_add = 25
 }
 
 zombie_small_frenzy_modifier = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_lightbulb_negative.dds
-	unit_offense_add = 15
-	unit_defense_add = 20
+	unit_offense_add = 20
+	unit_defense_add = 25
 }

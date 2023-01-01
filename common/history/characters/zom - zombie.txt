@@ -9,6 +9,106 @@ CHARACTERS = {
 			interest_group = ig_landowners
 			ideology = ideology_radical
 			birth_date = 1820.1.1
-				}				
-			}
+		}		
+
+		create_character = {
+			first_name = Zombie
+			last_name = Z
+			culture = cu:zombie
+			is_general = yes
+			interest_group = ig_landowners
+			ideology = ideology_radical
+			birth_date = 1820.1.1
+			commander_rank = commander_rank_3
 		}
+
+		create_character = {
+			first_name = Zombie
+			last_name = Z
+			culture = cu:zombie
+			is_general = yes
+			interest_group = ig_landowners
+			ideology = ideology_radical
+			birth_date = 1820.1.1
+			commander_rank = commander_rank_3
+		}	
+			
+		create_character = {
+			first_name = Zombie
+			last_name = Z
+			culture = cu:zombie
+			is_general = yes
+			interest_group = ig_landowners
+			ideology = ideology_radical
+			birth_date = 1820.1.1
+			commander_rank = commander_rank_3
+		}	
+			
+		create_character = {
+			first_name = Zombie
+			last_name = Z
+			culture = cu:zombie
+			is_general = yes
+			interest_group = ig_landowners
+			ideology = ideology_radical
+			birth_date = 1820.1.1
+			commander_rank = commander_rank_3
+		}	
+			
+		create_character = {
+			first_name = Zombie
+			last_name = Z
+			culture = cu:zombie
+			is_general = yes
+			interest_group = ig_landowners
+			ideology = ideology_radical
+			birth_date = 1820.1.1
+			commander_rank = commander_rank_3
+		}	
+			
+		create_character = {
+			first_name = Zombie
+			last_name = Z
+			culture = cu:zombie
+			is_general = yes
+			interest_group = ig_landowners
+			ideology = ideology_radical
+			birth_date = 1820.1.1
+			commander_rank = commander_rank_3
+		}	
+			
+		create_character = {
+			first_name = Zombie
+			last_name = Z
+			culture = cu:zombie
+			is_general = yes
+			interest_group = ig_landowners
+			ideology = ideology_radical
+			birth_date = 1820.1.1
+			commander_rank = commander_rank_3
+		}	
+			
+		create_character = {
+			first_name = Zombie
+			last_name = Z
+			culture = cu:zombie
+			is_general = yes
+			interest_group = ig_landowners
+			ideology = ideology_radical
+			birth_date = 1820.1.1
+			commander_rank = commander_rank_3
+		}	
+			
+		create_character = {
+			first_name = Zombie
+			last_name = Z
+			culture = cu:zombie
+			is_general = yes
+			interest_group = ig_landowners
+			ideology = ideology_radical
+			birth_date = 1820.1.1
+			commander_rank = commander_rank_3
+		}	
+			
+	}
+}
