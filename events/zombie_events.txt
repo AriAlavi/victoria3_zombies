@@ -103,13 +103,22 @@ zombie.3 = {
 		this = c:ZOM
 	}
 	immediate = {
-		every_state_region = {
-			set_owner_of_provinces = {
-				country = c:ZOM
-				provinces = {
-
+		every_state = {
+			if = {
+				limit = {
+					controller = c:ZOM
+					NOT = { owner = c:ZOM }
 				}
+				set_state_owner = c:ZOM
 			}
+			if = {
+				limit = {
+					NOT = { controller = c:ZOM }
+					owner = c:ZOM
+				}
+				set_state_owner = controller
+			}
+
 		}
 	}
 }
