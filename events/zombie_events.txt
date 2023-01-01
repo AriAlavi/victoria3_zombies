@@ -11,7 +11,7 @@ zombie.1 = {
 	
 	trigger = {
 		exists = c:ZOM
-        	this = c:ZOM
+        this = c:ZOM
 	}
 
 
@@ -42,6 +42,49 @@ zombie.1 = {
 				}
 				
 			}
+		}
+	}
+}
+
+zombie.2 = {
+	type = country_event
+	title = zombie_events.2.t
+	desc = zombie_events.2.d
+	flavor = zombie_events.2.f
+
+	icon = "gfx/interface/icons/event_icons/event_skull.dds"
+	
+	duration = 1
+	
+	trigger = {
+		exists = c:ZOM
+	}
+	
+	immediate = {
+		every_diplomatic_play = {
+			initiator = {
+				limit = {
+					has_war_with = c:ZOM
+				}
+			}
+			war = {
+				add_war_war_support = {
+					target = attacker_warleader
+					value = 1000
+				}
+				add_war_exhaustion = {
+					target = attacker_warleader
+					value = -1000
+				}
+				add_war_war_support = {
+					target = defender_warleader
+					value = 1000
+				}
+				add_war_exhaustion = {
+					target = defender_warleader
+					value = -1000
+				}
+			}	
 		}
 	}
 }
