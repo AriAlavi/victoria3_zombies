@@ -15,26 +15,31 @@ zombie.1 = {
 			limit = {
 				is_adjacent = ROOT
 				NOT = { has_war_with = ROOT }
-				NOT = { is_country_type = decentralized }
+				NOT = { country_has_primary_culture = c:ZOM }
+				total_population > 0
+				exists = yes
 			}
 			change_relations = {
 				country = ROOT
 				value = -400
 			}
 			save_scope_as = target_country
-			create_diplomatic_play = {
-				name = zombie_invasion
-				war = yes
-				type = dp_annex_war
-				target_state = ROOT.capital
-				
-				add_war_goal = {
-					holder = ROOT
-					type = annex_country
+			root = {
+				create_diplomatic_play = {
+					name = zombie_invasion
+					war = yes
+					type = dp_annex_war
 					target_state = scope:target_country.capital
-				}
-				
+					
+					add_war_goal = {
+						holder = ROOT
+						type = annex_country
+						target_state = root.capital
+					}
+					
+				}	
 			}
+
 		}
 	}
 }
@@ -83,11 +88,11 @@ zombie.2 = {
 					}
 					add_war_war_support = {
 						target = defender_warleader
-						value = 1000
+						value = 100
 					}
 					add_war_exhaustion = {
 						target = defender_warleader
-						value = -1000
+						value = -10
 					}
 				}else = {
 					prev = {
