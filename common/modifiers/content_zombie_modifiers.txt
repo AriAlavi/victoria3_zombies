@@ -16,3 +16,22 @@ zombie_nation_modifier = {
 	country_production_weekly_innovation_mult = -100
 	country_society_weekly_innovation_mult = -100
 }
+
+zombie_insane_frenzy_modifier = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_lightbulb_negative.dds
+	unit_offense_add = 15
+	unit_defense_add = 20
+}
+
+
+zombie_frenzy_modifier = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_lightbulb_negative.dds
+	unit_offense_add = 15
+	unit_defense_add = 20
+}
+
+zombie_small_frenzy_modifier = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_lightbulb_negative.dds
+	unit_offense_add = 15
+	unit_defense_add = 20
+}

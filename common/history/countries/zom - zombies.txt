@@ -23,5 +23,17 @@ COUNTRIES = {
 		add_modifier = {
 			name = zombie_nation_modifier
 		}
+		add_modifier = {
+			name = zombie_insane_frenzy_modifier
+			months = 12
+		}
+		add_modifier = {
+			name = zombie_frenzy_modifier
+			months = 24
+		}
+		add_modifier = {
+			name = zombie_small_frenzy_modifier
+			months = 36
+		}
 	}
 }
