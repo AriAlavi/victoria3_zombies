@@ -25,8 +25,9 @@
 bg_zombie = {
 	parent_group = bg_army
 	urbanization = 0
-	hiring_rate = 100000000
 	hires_unemployed_only = no
 	fired_pops_become_radical = no
+	can_use_slaves = no
+	always_possible = no
 }
 

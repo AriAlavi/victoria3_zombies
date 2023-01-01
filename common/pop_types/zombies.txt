@@ -1,8 +1,8 @@
 ﻿zombies = {
 	texture = "gfx/interface/icons/pops_icons/soldiers.dds"
 	color = hsv{ 0.8 0.20 0.56 }
-	strata = poor
-	start_quality_of_life = 7
+	strata = rich
+	start_quality_of_life = 1
 	can_always_hire = yes
 	wage_weight = 0
 	dependent_wage = 0	# per year
@@ -48,5 +48,27 @@
 		}
 	}
 	portrait_pose = { value = 0 }			
-	portrait_is_female = { always = yes }
+	portrait_is_female = { always = no }
+	
+	qualifications_growth_desc = "ZOMBIES_QUALIFICATIONS_DESC"
+	qualifications = {
+		if = {
+			if = {
+				limit = {
+					has_culture = cu:zombie
+				}	
+				value = {
+					desc = "QUALIFICATIONS_ZOMBIE"
+					value = 100000
+				}
+			}
+			else = {
+				value = {
+					desc = "QUALIFICATIONS_NOT_ZOMBIE"
+					value = -100000
+				}
+			}
+
+		}
+	}
 }

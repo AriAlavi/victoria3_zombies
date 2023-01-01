@@ -6,11 +6,12 @@
 		}
 
 		level_scaled = {
-			building_employment_zombies_add = 970
+			building_employment_zombies_add = 1000000
 			building_training_rate_add = 10000
 		}
 
 		throughput_scaled = {
+			building_zombies_mortality_mult = -4
 			unit_offense_add = 30
 			unit_defense_add = 25
 		}
