@@ -17,8 +17,3 @@ zombie_nation_modifier = {
 	country_production_weekly_innovation_mult = -100
 	country_society_weekly_innovation_mult = -100
 }
-
-zombie_war_modifier = {
-	icon = gfx/interface/icons/timed_modifier_icons/modifier_lightbulb_negative.dds
-	country_tax_income_add = -1000000000
-}

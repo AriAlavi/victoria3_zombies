@@ -113,6 +113,45 @@ zombie.3 = {
 			}
 		}
 	}
+}
+
+zombie.4 = {
+	type = country_event
+	title = zombie_events.4.t
+	desc = zombie_events.4.d
+	flavor = zombie_events.4.f
+	hidden = yes
 	
+	icon = "gfx/interface/icons/event_icons/event_skull.dds"
 	
+	trigger = {
+		exists = c:ZOM
+		this = c:ZOM
+	}
+	immediate = {
+		every_state = {
+			if = {
+				limit = {
+					owner = {
+						THIS = c:ZOM
+					}
+				}
+				create_building = {
+					building="building_zombie"
+					level=100
+					reserves=1
+				}
+			}
+			else = {
+				limit = {
+					owner = {
+						NOT = { THIS = c:ZOM }
+					}
+				}
+				remove_building = building_zombie
+			}
+
+				
+		}
+	}
 }
