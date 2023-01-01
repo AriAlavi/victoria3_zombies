@@ -54,22 +54,38 @@ zombie.2 = {
 				}
 			}
 			war = {
-				add_war_war_support = {
-					target = attacker_warleader
-					value = 1000
+				if = {
+					limit = { exists = attacker_warleader }
+					add_war_war_support = {
+						target = attacker_warleader
+						value = 1000
+					}
+					add_war_exhaustion = {
+						target = attacker_warleader
+						value = -1000
+					}
 				}
-				add_war_exhaustion = {
-					target = attacker_warleader
-					value = -1000
+				else = {
+					prev = {
+						end_play = yes
+					}
 				}
-				add_war_war_support = {
-					target = defender_warleader
-					value = 1000
+				if = {
+					limit = { exists = defender_warleader }
+					add_war_war_support = {
+						target = defender_warleader
+						value = 1000
+					}
+					add_war_exhaustion = {
+						target = defender_warleader
+						value = -1000
+					}
+				}else = {
+					prev = {
+						end_play = yes
+					}
 				}
-				add_war_exhaustion = {
-					target = defender_warleader
-					value = -1000
-				}
+
 			}	
 		}
 	}
@@ -529,6 +545,24 @@ zombie.8 = {
 				}
 			}
 			set_state_owner = controller
+		}
+	}
+}
+
+zombie.9 = {
+	type = state_event
+	placement = ROOT
+	hidden = yes
+
+	trigger = {
+		NOT = { owner = c:ZOM }
+	}
+
+	immediate = {
+		every_scope_pop = {
+			limit = {
+				culture = cu:zombie
+			}
 		}
 	}
 }
