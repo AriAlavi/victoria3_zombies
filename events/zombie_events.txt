@@ -1,9 +1,7 @@
 namespace = zombie
 
-zombie.2 = {
+zombie.1 = {
 	type = country_event
-	placement = root
-	
 	title = zombie_events.1.t
 	desc = zombie_events.1.d
 	flavor = zombie_events.1.f
@@ -11,9 +9,10 @@ zombie.2 = {
 	icon = "gfx/interface/icons/event_icons/event_skull.dds"
 	
 	trigger = {
-        exists = c:ZOM
-        ROOT = c:ZOM
+		exists = c:ZOM
+        	this = c:ZOM
 	}
+
 
 	duration = 1
 
