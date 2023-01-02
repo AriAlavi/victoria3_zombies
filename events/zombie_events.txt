@@ -1,47 +1,47 @@
 namespace = zombie
 
 zombie.1 = {
-	type = country_event
-	placement = ROOT
+	# type = country_event
+	# placement = ROOT
 	hidden = yes
 
-	trigger = {
-		exists = c:ZOM
-		this = c:ZOM
-	}
+	# trigger = {
+	# 	exists = c:ZOM
+	# 	this = c:ZOM
+	# }
 
-	immediate = {
-		every_country = {
-			limit = {
-				is_adjacent = ROOT
-				NOT = { has_war_with = ROOT }
-				NOT = { country_has_primary_culture = c:ZOM }
-				total_population > 0
-				exists = yes
-			}
-			change_relations = {
-				country = ROOT
-				value = -400
-			}
-			save_scope_as = target_country
-			root = {
-				create_diplomatic_play = {
-					name = zombie_invasion
-					war = yes
-					type = dp_humiliation
-					target_state = scope:target_country.capital
+	# immediate = {
+	# 	every_country = {
+	# 		limit = {
+	# 			is_adjacent = ROOT
+	# 			NOT = { has_war_with = ROOT }
+	# 			NOT = { country_has_primary_culture = c:ZOM }
+	# 			total_population > 0
+	# 			exists = yes
+	# 		}
+	# 		change_relations = {
+	# 			country = ROOT
+	# 			value = -400
+	# 		}
+	# 		save_scope_as = target_country
+	# 		root = {
+	# 			create_diplomatic_play = {
+	# 				name = zombie_invasion
+	# 				war = yes
+	# 				type = dp_humiliation
+	# 				target_state = scope:target_country.capital
 					
-					add_war_goal = {
-						holder = scope:target_country
-						type = humiliation
-						target_state = root.capital
-					}
+	# 				add_war_goal = {
+	# 					holder = scope:target_country
+	# 					type = humiliation
+	# 					target_state = root.capital
+	# 				}
 					
-				}	
-			}
+	# 			}	
+	# 		}
 
-		}
-	}
+	# 	}
+	# }
 }
 
 zombie.2 = {
@@ -478,32 +478,32 @@ zombie.4 = {
 
 
 zombie.5 = {
-	type = country_event
-	title = zombie_events.5.t
-	desc = zombie_events.5.d
-	flavor = zombie_events.5.f
+	# type = country_event
+	# title = zombie_events.5.t
+	# desc = zombie_events.5.d
+	# flavor = zombie_events.5.f
 	hidden = yes
 	
-	icon = "gfx/interface/icons/event_icons/event_skull.dds"
+	# icon = "gfx/interface/icons/event_icons/event_skull.dds"
 
-	trigger = {
-		exists = c:ZOM
-	}
+	# trigger = {
+	# 	exists = c:ZOM
+	# }
 
-	immediate = {
-		c:ZOM = {
-			every_scope_pop = {
-				change_pop_culture = {
-					target = cu:zombie
-					value = 1
-				}
-				change_pop_religion = {
-					target = rel:zombie
-					value = 1
-				}
-			}
-		}
-	}
+	# immediate = {
+	# 	c:ZOM = {
+	# 		every_scope_pop = {
+	# 			change_pop_culture = {
+	# 				target = cu:zombie
+	# 				value = 1
+	# 			}
+	# 			change_pop_religion = {
+	# 				target = rel:zombie
+	# 				value = 1
+	# 			}
+	# 		}
+	# 	}
+	# }
 }
 
 zombie.6 = {
