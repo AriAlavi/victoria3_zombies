@@ -161,6 +161,7 @@ zombie.4 = {
 					owner = {
 						NOT = { THIS = c:ZOM }
 					}
+					has_building = building_zombie
 				}
 				remove_building = building_zombie
 			}
@@ -494,11 +495,11 @@ zombie.5 = {
 			every_scope_pop = {
 				change_pop_culture = {
 					target = cu:zombie
-					value = 0.1
+					value = 1
 				}
 				change_pop_religion = {
 					target = rel:zombie
-					value = 0.1
+					value = 1
 				}
 			}
 		}
