@@ -18,6 +18,11 @@ zombie_nation_modifier = {
 	country_prestige_mult = -1
 }
 
+zombie_desolation = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_lightbulb_negative.dds
+	state_mortality_mult = 50
+}
+
 zombie_insane_frenzy_modifier = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_lightbulb_negative.dds
 	unit_offense_add = 20

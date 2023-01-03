@@ -1,6 +1,4 @@
-﻿############ BARRACKS
-
-building_zombie = {
+﻿building_zombie = {
 	building_group = bg_zombie
 	buildable = no
 	expandable = no

@@ -23,5 +23,8 @@ COUNTRIES = {
 		add_modifier = {
 			name = zombie_nation_modifier
 		}
+		add_modifier = {
+			name = zombie_desolation
+		}
 	}
 }
