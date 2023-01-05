@@ -15,30 +15,49 @@ zombie.1 = {
 			limit = {
 				is_adjacent = ROOT
 				NOT = { has_war_with = ROOT }
-				NOT = { country_has_primary_culture = c:ZOM }
+				NOT = { country_has_primary_culture = cu:zombie }
+				NOT = { is_country_type = decentralized }
 				total_population > 0
 				exists = yes
+			}
+			if = {
+				limit = {
+					is_subject = yes
+				}
+				overlord = {
+					save_scope_as = target_country
+				}
+				
+			}else = {
+				save_scope_as = target_country
 			}
 			change_relations = {
 				country = ROOT
 				value = -400
 			}
-			save_scope_as = target_country
-			root = {
-				create_diplomatic_play = {
-					name = zombie_invasion
-					war = yes
-					type = dp_humiliation
-					target_state = scope:target_country.capital
-					
-					add_war_goal = {
-						holder = scope:target_country
-						type = humiliation
-						target_state = root.capital
+			if = {
+				limit = {
+					scope:target_country = {
+						NOT = { has_war_with = ROOT }
 					}
-					
-				}	
+				}
+				root = {
+					create_diplomatic_play = {
+						name = zombie_invasion
+						war = yes
+						type = dp_humiliation
+						target_state = scope:target_country.capital
+						
+						add_war_goal = {
+							holder = scope:target_country
+							type = humiliation
+							target_state = root.capital
+						}
+						
+					}	
+				}
 			}
+
 
 		}
 	}
@@ -475,11 +494,7 @@ zombie.5 = {
 			every_scope_pop = {
 				change_pop_culture = {
 					target = cu:zombie
-					value = 0.02
-				}
-				change_pop_religion = {
-					target = rel:zombie
-					value = 0.02
+					value = 1
 				}
 			}
 		}
@@ -581,5 +596,53 @@ zombie.10 = {
 
 	immediate = {
 		remove_building = building_zombie_guerilla
+	}
+}
+
+# Zombie buff
+zombie.11 = {
+	type = country_event
+	placement = root
+	title = zombie.11.t
+	desc = zombie.11.d
+	flavor = zombie.11.f
+	icon = "gfx/interface/icons/event_icons/event_skull.dds"
+	trigger = {
+		exists = c:ZOM
+		c:ZOM = {
+			NOT = { has_modifier = zombie_small_frenzy_modifier }
+		}
+	}
+	duration = 3
+
+	event_image = {
+		video = "gfx/event_pictures/middleeast_courtroom_upheaval.bk2"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/middleeast/courtroom_upheaval"
+
+	immediate = {
+		if = {
+			limit = {
+				this = c:ZOM
+			}
+			add_modifier = {
+				name = zombie_insane_frenzy_modifier
+				months = 12
+			}
+			add_modifier = {
+				name = zombie_frenzy_modifier
+				months = 24
+			}
+			add_modifier = {
+				name = zombie_small_frenzy_modifier
+				months = 36
+			}
+		}
+	}
+	option = {
+		name = zombie.11.o
+		highlighted_option = yes
 	}
 }

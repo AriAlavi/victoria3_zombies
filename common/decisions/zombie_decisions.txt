@@ -7,6 +7,7 @@ peace_zombies_decision = {
 	possible = {
 		ROOT = {
 			NOT = { is_adjacent = c:ZOM }
+			is_subject = no
 		}
 	}
 

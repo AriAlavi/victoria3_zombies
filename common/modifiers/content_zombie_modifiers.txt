@@ -1,7 +1,8 @@
 zombie_nation_modifier = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_lightbulb_negative.dds
 	state_standard_of_living_add = -100
-	state_mortality_mult = 7
+	state_birth_rate_mult = -1
+	state_mortality_mult = 9
 	unit_offense_mult = 0.50
 	unit_defense_mult = 0.20
 	country_tax_income_add = 100000000
@@ -20,7 +21,7 @@ zombie_nation_modifier = {
 
 zombie_desolation = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_lightbulb_negative.dds
-	state_mortality_mult = 50
+	state_mortality_mult = 2
 }
 
 zombie_insane_frenzy_modifier = {

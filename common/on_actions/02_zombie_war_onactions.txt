@@ -6,6 +6,11 @@ on_monthly_pulse_country = {
 		zombie.5 # convert pops to zombies
 	}
 }
+on_yearly_pulse_country = {
+	random_events = {
+		7 = zombie.11 # Get buffs back
+	}
+}
 
 on_monthly_pulse_state = {
 	events = {
