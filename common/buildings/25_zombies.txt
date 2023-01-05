@@ -17,3 +17,22 @@
 		pmg_zombies
 	}
 }
+
+building_zombie_guerilla = {
+	building_group = bg_government
+	buildable = no
+	expandable = no
+	downsizeable = no
+	
+	has_max_level = yes	
+
+	levels_per_mesh = 0
+	residence_points_per_level = 0
+	city_type = none
+
+	texture = "gfx/interface/icons/building_icons/building_conscription_center.dds"
+
+	production_method_groups = {
+		pmg_guerilla
+	}
+}

@@ -9,3 +9,10 @@ on_monthly_pulse_country = {
 		zombie.4 # create zombie buildings
 	}
 }
+
+on_monthly_pulse_state = {
+	events = {
+		zombie.9 # create zombie guerillas
+		zombie.10 # destroy zombie guerillas
+	}
+}

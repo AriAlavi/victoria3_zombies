@@ -26,3 +26,24 @@
 		}
 	}
 }
+
+pm_zombie_eradication = {
+	texture = "gfx/interface/icons/production_method_icons/irregular_infantry.dds"
+	is_default = yes
+	building_modifiers = {
+		workforce_scaled = {
+		}
+
+		level_scaled = {
+			building_employment_zombies_add = 100000
+		}
+
+		throughput_scaled = {
+			building_zombies_mortality_mult = 20
+		}
+
+		unscaled = {
+			building_zombies_mortality_mult = 5
+		}
+	}
+}

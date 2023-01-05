@@ -1,10 +1,10 @@
 ﻿zombies = {
-	texture = "gfx/interface/icons/pops_icons/slaves.dds"
+	texture = "gfx/interface/icons/pops_icons/soldiers.dds"
 	color = { 255 0 0 }
 	strata = poor
 	start_quality_of_life = 1
 	can_always_hire = no
-	working_adult_ratio = 0.95
+	working_adult_ratio = 1
 	wage_weight = 0
 	dependent_wage = 0
 
@@ -13,27 +13,27 @@
 	political_engagement_literacy_factor = 0.0
 	
 	political_engagement_mult = {
-		value = 1		
+		value = 0
 	}
 	
-	qualifications_growth_desc = "VICTIMS_QUALIFICATIONS_DESC"
+	qualifications_growth_desc = "ZOMBIES_QUALIFICATIONS_DESC"
 	qualifications = {
-	
-		value = 1.0
-		
 		if = {
 			limit = {
-				pop_is_discriminated = yes
+				OR = {
+					has_pop_culture = zombie
+					has_pop_religion = zombie
+				}
 			}
 			value = {
-				value = 0
-				desc = "QUALIFICATIONS_INSUFFICIENT_WEALTH_DECAY"
+				value = 1000
+				desc = "QUALIFICATIONS_FAVORED_TYPE"
 			}
 		}
 		else= {
 			value = {
-				value = 500
-				desc = "QUALIFICATIONS_FAVORED_TYPE"
+				value = -1000
+				desc = "QUALIFICATIONS_NON_FAVORED_TYPE"
 			}
 		}
 	}

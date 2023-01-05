@@ -485,10 +485,12 @@ zombie.4 = {
 zombie.5 = {
 	type = country_event
 	hidden = yes
+	placement = ROOT
 	
 
 	trigger = {
-		root = c:ZOM
+		exists = c:ZOM
+		this = c:ZOM
 	}
 
 	immediate = {
@@ -496,11 +498,11 @@ zombie.5 = {
 			every_scope_pop = {
 				change_pop_culture = {
 					target = cu:zombie
-					value = 0.1
+					value = 0.02
 				}
 				change_pop_religion = {
 					target = rel:zombie
-					value = 0.1
+					value = 0.02
 				}
 			}
 		}
@@ -566,20 +568,46 @@ zombie.8 = {
 	}
 }
 
+# Create zombie guerillas
 zombie.9 = {
 	type = state_event
 	placement = ROOT
 	hidden = yes
 
 	trigger = {
-		NOT = { owner = c:ZOM }
+		NOT = { owner = {
+			country_has_primary_culture = cu:zombie
+		} }
+		any_scope_pop = {
+			has_pop_culture = zombie
+		}
+		not = { has_building = building_zombie_guerilla }
 	}
 
 	immediate = {
-		every_scope_pop = {
-			limit = {
-				culture = cu:zombie
+		create_building = {
+			building="building_zombie_guerilla"
+			level=1
+			reserves=1
+		}
+	}
+}
+# Delete leftover zombie guerillas
+zombie.10 = {
+	type = state_event
+	placement = ROOT
+	hidden = yes
+
+	trigger = {
+		has_building = building_zombie_guerilla
+		not = {
+			any_scope_pop = {
+				has_pop_culture = zombie
 			}
 		}
+	}
+
+	immediate = {
+		remove_building = building_zombie_guerilla
 	}
 }
