@@ -1,18 +1,18 @@
 on_monthly_pulse_country = {
 	events = {
-		zombie.3 # automatic change province owner to zombie
-		zombie.8 # automatic change province owner to zombie attacker
 		zombie.1 # Go war
 		zombie.2 # infinite war support
 		zombie.7 # decolonize automatically
 		zombie.5 # convert pops to zombies
-		zombie.4 # create zombie buildings
 	}
 }
 
 on_monthly_pulse_state = {
 	events = {
+		zombie.3 # automatic change province owner to zombie
 		zombie.9 # create zombie guerillas
 		zombie.10 # destroy zombie guerillas
+		zombie.4 # create zombie buildings
+		zombie.8 # automatic change province owner to zombie attacker
 	}
 }

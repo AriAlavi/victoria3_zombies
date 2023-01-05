@@ -106,376 +106,353 @@ zombie.2 = {
 }
 
 zombie.3 = {
-	type = country_event
+	type = state_event
 	placement = ROOT
 	hidden = yes
 
 	trigger = {
 		exists = c:ZOM
-		this = c:ZOM
+		controller =  c:ZOM
+		NOT = { owner = c:ZOM }
+		state_region = {
+			is_state_region_land = yes
+		}
 	}
 
 	immediate = {
-		every_state = {
-			limit = {
-				controller = c:ZOM
-				NOT = { owner = c:ZOM }
-				state_region = {
-					is_state_region_land = yes
-				}
-			}
-			set_state_owner = c:ZOM
-		}
+		set_state_owner = c:ZOM
 	}
 }
 
 zombie.4 = {
-	type = country_event
-	title = zombie_events.4.t
-	desc = zombie_events.4.d
-	flavor = zombie_events.4.f
+	type = state_event
+	placement = ROOT
 	hidden = yes
 	
-	icon = "gfx/interface/icons/event_icons/event_skull.dds"
-	
-	trigger = {
-		exists = c:ZOM
-	}
 	
 	immediate = {
-		every_state = {
+		if = {
+			limit = {
+				owner = {
+					THIS = c:ZOM
+				}
+				not = {
+					has_building = building_zombie
+				}
+			}
+			create_building = {
+				building="building_zombie"
+				level=100
+				reserves=1
+			}
+		}
+		else_if = {
+			limit = {
+				owner = {
+					NOT = { THIS = c:ZOM }
+				}
+				has_building = building_zombie
+			}
+			remove_building = building_zombie
+		}
+		if = {
+			limit = {
+				owner = c:ZOM
+			}
+
 			if = {
 				limit = {
-					owner = {
-						THIS = c:ZOM
-					}
+					has_building = building_government_administration
 				}
-				create_building = {
-					building="building_zombie"
-					level=100
-					reserves=1
-				}
+				remove_building = building_government_administration
 			}
 			else_if = {
 				limit = {
-					owner = {
-						NOT = { THIS = c:ZOM }
-					}
-					has_building = building_zombie
+					has_building = building_construction_sector
 				}
-				remove_building = building_zombie
-			}
-			if = {
+				remove_building = building_construction_sector
+			}		
+			else_if = {
 				limit = {
-					owner = {
-						THIS = c:ZOM
-					}
+					has_building = building_university
 				}
-				every_scope_building = {
-					limit = {
-						exists = yes
-						state = {
-							exists = yes
-						}
-					}
-					state = {
-						if = {
-							limit = {
-								has_building = building_government_administration
-							}
-							remove_building = building_government_administration
-						}
-						else_if = {
-							limit = {
-								has_building = building_construction_sector
-							}
-							remove_building = building_construction_sector
-						}		
-						else_if = {
-							limit = {
-								has_building = building_university
-							}
-							remove_building = building_university
-						}	
-						else_if = {
-							limit = {
-								has_building = building_railway
-							}
-							remove_building = building_railway
-						}	
-						else_if = {
-							limit = {
-								has_building = building_port
-							}
-							remove_building = building_port
-						}	
-						else_if = {
-							limit = {
-								has_building = building_barracks
-							}
-							remove_building = building_barracks
-						}	
-						else_if = {
-							limit = {
-								has_building = building_naval_base
-							}
-							remove_building = building_naval_base
-						}	
-						else_if = {
-							limit = {
-								has_building = building_logging_camp
-							}
-							remove_building = building_logging_camp
-						}	
-						else_if = {
-							limit = {
-								has_building = building_fishing_wharf
-							}
-							remove_building = building_fishing_wharf
-						}	
-						else_if = {
-							limit = {
-								has_building = building_whaling_station
-							}
-							remove_building = building_whaling_station
-						}	
-						else_if = {
-							limit = {
-								has_building = building_coal_mine
-							}
-							remove_building = building_coal_mine
-						}	
-						else_if = {
-							limit = {
-								has_building = building_iron_mine
-							}
-							remove_building = building_iron_mine
-						}	
-						else_if = {
-							limit = {
-								has_building = building_lead_mine
-							}
-							remove_building = building_lead_mine
-						}	
-						else_if = {
-							limit = {
-								has_building = building_sulfur_mine
-							}
-							remove_building = building_sulfur_mine
-						}	
-						else_if = {
-							limit = {
-								has_building = building_gold_mine
-							}
-							remove_building = building_gold_mine
-						}	
-						else_if = {
-							limit = {
-								has_building = building_rubber_plantation
-							}
-							remove_building = building_rubber_plantation
-						}	
-						else_if = {
-							limit = {
-								has_building = building_oil_rig
-							}
-							remove_building = building_oil_rig
-						}	
-						else_if = {
-							limit = {
-								has_building = building_wheat_farm
-							}
-							remove_building = building_wheat_farm
-						}	
-						else_if = {
-							limit = {
-								has_building = building_rye_farm
-							}
-							remove_building = building_rye_farm
-						}	
-						else_if = {
-							limit = {
-								has_building = building_rice_farm
-							}
-							remove_building = building_rice_farm
-						}	
-						else_if = {
-							limit = {
-								has_building = building_maize_farm
-							}
-							remove_building = building_maize_farm
-						}	
-						else_if = {
-							limit = {
-								has_building = building_millet_farm
-							}
-							remove_building = building_millet_farm
-						}	
-						else_if = {
-							limit = {
-								has_building = building_livestock_ranch
-							}
-							remove_building = building_livestock_ranch
-						}	
-						else_if = {
-							limit = {
-								has_building = building_cotton_plantation
-							}
-							remove_building = building_cotton_plantation
-						}	
-						else_if = {
-							limit = {
-								has_building = building_dye_plantation
-							}
-							remove_building = building_dye_plantation
-						}	
-						else_if = {
-							limit = {
-								has_building = building_silk_plantation
-							}
-							remove_building = building_silk_plantation
-						}	
-						else_if = {
-							limit = {
-								has_building = building_banana_plantation
-							}
-							remove_building = building_banana_plantation
-						}	
-						else_if = {
-							limit = {
-								has_building = building_sugar_plantation
-							}
-							remove_building = building_sugar_plantation
-						}	
-						else_if = {
-							limit = {
-								has_building = building_tea_plantation
-							}
-							remove_building = building_tea_plantation
-						}	
-						else_if = {
-							limit = {
-								has_building = building_coffee_plantation
-							}
-							remove_building = building_coffee_plantation
-						}	
-						else_if = {
-							limit = {
-								has_building = building_tobacco_plantation
-							}
-							remove_building = building_tobacco_plantation
-						}	
-						else_if = {
-							limit = {
-								has_building = building_opium_plantation
-							}
-							remove_building = building_opium_plantation
-						}	
-						else_if = {
-							limit = {
-								has_building = building_food_industry
-							}
-							remove_building = building_food_industry
-						}	
-						else_if = {
-							limit = {
-								has_building = building_arts_academy
-							}
-							remove_building = building_arts_academy
-						}	
-						else_if = {
-							limit = {
-								has_building = building_textile_mills
-							}
-							remove_building = building_textile_mills
-						}	
-						else_if = {
-							limit = {
-								has_building = building_furniture_manufacturies
-							}
-							remove_building = building_furniture_manufacturies
-						}	
-						else_if = {
-							limit = {
-								has_building = building_glassworks
-							}
-							remove_building = building_glassworks
-						}	
-						else_if = {
-							limit = {
-								has_building = building_tooling_workshops
-							}
-							remove_building = building_tooling_workshops
-						}	
-						else_if = {
-							limit = {
-								has_building = building_paper_mills
-							}
-							remove_building = building_paper_mills
-						}	
-						else_if = {
-							limit = {
-								has_building = building_chemical_plants
-							}
-							remove_building = building_chemical_plants
-						}	
-						else_if = {
-							limit = {
-								has_building = building_synthetics_plants
-							}
-							remove_building = building_synthetics_plants
-						}	
-						else_if = {
-							limit = {
-								has_building = building_steel_mills
-							}
-							remove_building = building_steel_mills
-						}	
-						else_if = {
-							limit = {
-								has_building = building_motor_industry
-							}
-							remove_building = building_motor_industry
-						}	
-						else_if = {
-							limit = {
-								has_building = building_power_plant
-							}
-							remove_building = building_power_plant
-						}	
-						else_if = {
-							limit = {
-								has_building = building_shipyards
-							}
-							remove_building = building_shipyards
-						}	
-						else_if = {
-							limit = {
-								has_building = building_arms_industry
-							}
-							remove_building = building_arms_industry
-						}	
-						else_if = {
-							limit = {
-								has_building = building_munition_plants
-							}
-							remove_building = building_munition_plants
-						}	
-						else_if = {
-							limit = {
-								has_building = building_electrics_industry
-							}
-							remove_building = building_electrics_industry
-						}	
-						else_if = {
-							limit = {
-								has_building = building_war_machine_industry
-							}
-							remove_building = building_war_machine_industry
-						}	
-					}
-					
+				remove_building = building_university
+			}	
+			else_if = {
+				limit = {
+					has_building = building_railway
 				}
+				remove_building = building_railway
+			}	
+			else_if = {
+				limit = {
+					has_building = building_port
+				}
+				remove_building = building_port
+			}	
+			else_if = {
+				limit = {
+					has_building = building_barracks
+				}
+				remove_building = building_barracks
+			}	
+			else_if = {
+				limit = {
+					has_building = building_naval_base
+				}
+				remove_building = building_naval_base
+			}	
+			else_if = {
+				limit = {
+					has_building = building_logging_camp
+				}
+				remove_building = building_logging_camp
+			}	
+			else_if = {
+				limit = {
+					has_building = building_fishing_wharf
+				}
+				remove_building = building_fishing_wharf
+			}	
+			else_if = {
+				limit = {
+					has_building = building_whaling_station
+				}
+				remove_building = building_whaling_station
+			}	
+			else_if = {
+				limit = {
+					has_building = building_coal_mine
+				}
+				remove_building = building_coal_mine
+			}	
+			else_if = {
+				limit = {
+					has_building = building_iron_mine
+				}
+				remove_building = building_iron_mine
+			}	
+			else_if = {
+				limit = {
+					has_building = building_lead_mine
+				}
+				remove_building = building_lead_mine
+			}	
+			else_if = {
+				limit = {
+					has_building = building_sulfur_mine
+				}
+				remove_building = building_sulfur_mine
+			}	
+			else_if = {
+				limit = {
+					has_building = building_gold_mine
+				}
+				remove_building = building_gold_mine
+			}	
+			else_if = {
+				limit = {
+					has_building = building_rubber_plantation
+				}
+				remove_building = building_rubber_plantation
+			}	
+			else_if = {
+				limit = {
+					has_building = building_oil_rig
+				}
+				remove_building = building_oil_rig
+			}	
+			else_if = {
+				limit = {
+					has_building = building_wheat_farm
+				}
+				remove_building = building_wheat_farm
+			}	
+			else_if = {
+				limit = {
+					has_building = building_rye_farm
+				}
+				remove_building = building_rye_farm
+			}	
+			else_if = {
+				limit = {
+					has_building = building_rice_farm
+				}
+				remove_building = building_rice_farm
+			}	
+			else_if = {
+				limit = {
+					has_building = building_maize_farm
+				}
+				remove_building = building_maize_farm
+			}	
+			else_if = {
+				limit = {
+					has_building = building_millet_farm
+				}
+				remove_building = building_millet_farm
+			}	
+			else_if = {
+				limit = {
+					has_building = building_livestock_ranch
+				}
+				remove_building = building_livestock_ranch
+			}	
+			else_if = {
+				limit = {
+					has_building = building_cotton_plantation
+				}
+				remove_building = building_cotton_plantation
+			}	
+			else_if = {
+				limit = {
+					has_building = building_dye_plantation
+				}
+				remove_building = building_dye_plantation
+			}	
+			else_if = {
+				limit = {
+					has_building = building_silk_plantation
+				}
+				remove_building = building_silk_plantation
+			}	
+			else_if = {
+				limit = {
+					has_building = building_banana_plantation
+				}
+				remove_building = building_banana_plantation
+			}	
+			else_if = {
+				limit = {
+					has_building = building_sugar_plantation
+				}
+				remove_building = building_sugar_plantation
+			}	
+			else_if = {
+				limit = {
+					has_building = building_tea_plantation
+				}
+				remove_building = building_tea_plantation
+			}	
+			else_if = {
+				limit = {
+					has_building = building_coffee_plantation
+				}
+				remove_building = building_coffee_plantation
+			}	
+			else_if = {
+				limit = {
+					has_building = building_tobacco_plantation
+				}
+				remove_building = building_tobacco_plantation
+			}	
+			else_if = {
+				limit = {
+					has_building = building_opium_plantation
+				}
+				remove_building = building_opium_plantation
+			}	
+			else_if = {
+				limit = {
+					has_building = building_food_industry
+				}
+				remove_building = building_food_industry
+			}	
+			else_if = {
+				limit = {
+					has_building = building_arts_academy
+				}
+				remove_building = building_arts_academy
+			}	
+			else_if = {
+				limit = {
+					has_building = building_textile_mills
+				}
+				remove_building = building_textile_mills
+			}	
+			else_if = {
+				limit = {
+					has_building = building_furniture_manufacturies
+				}
+				remove_building = building_furniture_manufacturies
+			}	
+			else_if = {
+				limit = {
+					has_building = building_glassworks
+				}
+				remove_building = building_glassworks
+			}	
+			else_if = {
+				limit = {
+					has_building = building_tooling_workshops
+				}
+				remove_building = building_tooling_workshops
+			}	
+			else_if = {
+				limit = {
+					has_building = building_paper_mills
+				}
+				remove_building = building_paper_mills
+			}	
+			else_if = {
+				limit = {
+					has_building = building_chemical_plants
+				}
+				remove_building = building_chemical_plants
+			}	
+			else_if = {
+				limit = {
+					has_building = building_synthetics_plants
+				}
+				remove_building = building_synthetics_plants
+			}	
+			else_if = {
+				limit = {
+					has_building = building_steel_mills
+				}
+				remove_building = building_steel_mills
+			}	
+			else_if = {
+				limit = {
+					has_building = building_motor_industry
+				}
+				remove_building = building_motor_industry
+			}	
+			else_if = {
+				limit = {
+					has_building = building_power_plant
+				}
+				remove_building = building_power_plant
+			}	
+			else_if = {
+				limit = {
+					has_building = building_shipyards
+				}
+				remove_building = building_shipyards
+			}	
+			else_if = {
+				limit = {
+					has_building = building_arms_industry
+				}
+				remove_building = building_arms_industry
+			}	
+			else_if = {
+				limit = {
+					has_building = building_munition_plants
+				}
+				remove_building = building_munition_plants
+			}	
+			else_if = {
+				limit = {
+					has_building = building_electrics_industry
+				}
+				remove_building = building_electrics_industry
+			}	
+			else_if = {
+				limit = {
+					has_building = building_war_machine_industry
+				}
+				remove_building = building_war_machine_industry
 			}	
 		}
 	}
@@ -545,26 +522,21 @@ zombie.7 = {
 }
 
 zombie.8 = {
-	type = country_event
+	type = state_event
 	placement = ROOT
 	hidden = yes
 
 	trigger = {
 		exists = c:ZOM
-		this = c:ZOM
+		owner = c:ZOM
+		NOT = { controller = c:ZOM }
+		state_region = {
+			is_state_region_land = yes
+		}
 	}
 
 	immediate = {
-		every_state = {
-			limit = {
-				NOT = { controller = c:ZOM }
-				owner = c:ZOM
-				state_region = {
-					is_state_region_land = yes
-				}
-			}
-			set_state_owner = controller
-		}
+		set_state_owner = controller
 	}
 }
 
