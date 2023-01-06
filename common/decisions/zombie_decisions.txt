@@ -2,13 +2,33 @@ peace_zombies_decision = {
 	is_shown = {
 		exists = c:ZOM
 		has_war_with = c:ZOM
+		is_subject = no
 	}
 
 	possible = {
-		ROOT = {
-			NOT = { is_adjacent = c:ZOM }
-			is_subject = no
+		OR = {
+			AND = {
+				# is_player = no
+				any_subject_or_below = {
+					any_scope_war = {
+						OR = {
+							NOT = { attacker_warleader = {
+								country_has_primary_culture = cu:zombie
+							}}
+							any_scope_front = {
+								always = no
+							}
+						}
+					}
+				}
+
+			}
+			# AND = {
+			# 	is_player = yes
+			# 	NOT = { is_adjacent = c:ZOM }
+			# }
 		}
+
 	}
 
 	when_taken = {

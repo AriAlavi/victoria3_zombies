@@ -1,7 +1,6 @@
 COUNTRIES = {
 	c:BIE = {
 		activate_law = law_type:law_anarchy
-		activate_law = law_type:law_council_republic
 		activate_law = law_type:law_isolationism
 		activate_law = law_type:law_ethnostate
 		activate_law = law_type:law_state_religion

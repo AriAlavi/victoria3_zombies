@@ -8,6 +8,7 @@ zombie.1 = {
 	trigger = {
 		exists = c:ZOM
 		country_has_primary_culture = cu:zombie
+		exists = yes
 	}
 
 	immediate = {
@@ -700,92 +701,203 @@ zombie.12 = {
 
 	immediate = {
 		random_list = {
-			80 = {}
-			20 = {
-				set_global_variable  = too_many_zombies_spawned
-			}
-		}
-		set_global_variable = {
-			name = last_zombie_victim
-			value = root
-		}
-		random_state = {
-			limit = {
-				state_population > 250000
-				owner = root
-				controller = root
-			}
-			create_country = {
-				state = this
-				tag = ZOM
-				on_created = {
-					add_modifier = {
-						name = zombie_nation_modifier
+			30 = {}
+			10 = {
+				set_variable = {
+					name = zombie_nations
+					value = 10
+				}
+				every_country = {
+					if = {
+						limit = {
+							country_has_primary_culture = cu:zombie
+						}
+						change_variable = {
+							name = zombie_nations
+							add = 1
+						}
 					}
-					add_modifier = {
-						name = zombie_insane_frenzy_modifier
-						months = 12
+				}
+				if = {
+					limit = {
+						zombie_nations > 3
 					}
-					add_modifier = {
-						name = zombie_frenzy_modifier
-						months = 24
-					}
-					add_modifier = {
-						name = zombie_small_frenzy_modifier
-						months = 36
-					}
-					add_modifier = {
-						name = zombie_first_strike_modifier
-						months = 6
-					}
-					save_scope_as = created_country
+					set_global_variable  = too_many_zombies_spawned
 					every_country = {
-						trigger_event = { 
-							id = zombie.14
+						trigger_event = {
+							id = zombie.15
 							days = 1
 						}
 					}
-					
+				}
+
+			}
+			60 = {
+				set_global_variable = {
+					name = last_zombie_victim
+					value = root
+				}
+				random_state = {
+					limit = {
+						state_population > 250000
+						owner = root
+						controller = root
+					}
+					create_country = {
+						state = this
+						tag = ZOM
+						on_created = {
+							add_modifier = {
+								name = zombie_nation_modifier
+							}
+							add_modifier = {
+								name = zombie_insane_frenzy_modifier
+								months = 12
+							}
+							add_modifier = {
+								name = zombie_frenzy_modifier
+								months = 24
+							}
+							add_modifier = {
+								name = zombie_small_frenzy_modifier
+								months = 36
+							}
+							add_modifier = {
+								name = zombie_first_strike_modifier
+								months = 6
+							}
+							save_scope_as = created_country					
+					save_scope_as = created_country
+							save_scope_as = created_country					
+					save_scope_as = created_country
+							save_scope_as = created_country					
+					save_scope_as = created_country
+							save_scope_as = created_country					
+							trigger_event = { 
+						trigger_event = { 
+							trigger_event = { 
+						trigger_event = { 
+							trigger_event = { 
+						trigger_event = { 
+							trigger_event = { 
 					trigger_event = { 
-						id = zombie.5
-						days = 1
-						popup = no
+							trigger_event = { 
+					trigger_event = { 
+							trigger_event = { 
+								id = zombie.5
+								days = 1
+								popup = no
+							}
+							create_character = {
+								first_name = Zombie
+								last_name = Z
+								culture = cu:zombie
+								is_general = yes
+								interest_group = ig_landowners
+								ideology = ideology_radical
+								birth_date = 1820.1.1
+								commander_rank = commander_rank_2
+							}	
+					}
+							}	
+							create_character = {
+								first_name = Zombie
+								last_name = Z
+								culture = cu:zombie
+								is_general = yes
+								interest_group = ig_landowners
+								ideology = ideology_radical
+								birth_date = 1820.1.1
+								commander_rank = commander_rank_2
+							}	
+							create_character = {
+								first_name = Zombie
+								last_name = Z
+								culture = cu:zombie
+								is_general = yes
+								interest_group = ig_landowners
+								ideology = ideology_radical
+								birth_date = 1820.1.1
+								commander_rank = commander_rank_2
+							}	
+					}
+							}	
+					}
+							}	
+						}
+					}
+					random_neighbouring_state = {
+						limit = {
+							owner = root
+							controller = root
+						}
+						create_country = {
+							state = this
+							tag = ZOM
+							on_created = {
+								add_modifier = {
+									name = zombie_nation_modifier
+								}
+								add_modifier = {
+									name = zombie_insane_frenzy_modifier
+									months = 12
+								}
+								add_modifier = {
+									name = zombie_frenzy_modifier
+									months = 24
+								}
+								add_modifier = {
+									name = zombie_small_frenzy_modifier
+									months = 36
+								}
+								add_modifier = {
+									name = zombie_first_strike_modifier
+									months = 6
+								}
+								save_scope_as = created_country
+								create_character = {
+									first_name = Zombie
+									last_name = Z
+									culture = cu:zombie
+									is_general = yes
+									interest_group = ig_landowners
+									ideology = ideology_radical
+									birth_date = 1820.1.1
+									commander_rank = commander_rank_2
+								}	
+								create_character = {
+									first_name = Zombie
+									last_name = Z
+									culture = cu:zombie
+									is_general = yes
+									interest_group = ig_landowners
+									ideology = ideology_radical
+									birth_date = 1820.1.1
+									commander_rank = commander_rank_2
+								}	
+								create_character = {
+									first_name = Zombie
+									last_name = Z
+									culture = cu:zombie
+									is_general = yes
+									interest_group = ig_landowners
+									ideology = ideology_radical
+									birth_date = 1820.1.1
+									commander_rank = commander_rank_2
+								}	
+							}
+						}
 					}
 				}
-			}
-			random_neighbouring_state = {
-				limit = {
-					owner = root
-					controller = root
-				}
-				create_country = {
-					state = this
-					tag = ZOM
-					on_created = {
-						add_modifier = {
-							name = zombie_nation_modifier
-						}
-						add_modifier = {
-							name = zombie_insane_frenzy_modifier
-							months = 12
-						}
-						add_modifier = {
-							name = zombie_frenzy_modifier
-							months = 24
-						}
-						add_modifier = {
-							name = zombie_small_frenzy_modifier
-							months = 36
-						}
-						add_modifier = {
-							name = zombie_first_strike_modifier
-							months = 6
-						}
-						save_scope_as = created_country
+				every_country = {
+					trigger_event = { 
+						id = zombie.14
+						days = 1
 					}
 				}
 			}
 		}
+
 	}
 }
 
@@ -793,7 +905,7 @@ zombie.12 = {
 zombie.13 = {
 	type = country_event
 	placement = root
-	duration = 1
+	hidden = yes
 
 	trigger = {
 		total_population > 1000000
@@ -823,9 +935,9 @@ zombie.13 = {
 zombie.14 = {
 	type = country_event
 	placement = root
-	title = example_event.14.t
-	desc = example_event.14.d
-	flavor = example_event.14.f
+	title = zombie.14.t
+	desc = zombie.14.d
+	flavor = zombie.14.f
 	duration = 3
 	icon = "gfx/interface/icons/event_icons/event_skull.dds"
 
@@ -838,11 +950,34 @@ zombie.14 = {
 	on_opened_soundeffect = "event:/SFX/Events/middleeast/courtroom_upheaval"
 
 	option = {
-		name = example_event.2.1
+		name = zombie.14.1
 		highlighted_option = yes
 		change_relations = {
 			country = global_var:last_zombie_victim
 			value = 100
 		}
+    }
+}
+
+# No more zombies
+zombie.15 = {
+	type = country_event
+	placement = root
+	title = zombie.15.t
+	desc = zombie.15.d
+	flavor = zombie.15.f
+	duration = 3
+	icon = "gfx/interface/icons/event_icons/event_skull.dds"
+
+
+	event_image = {
+		video = "gfx/event_pictures/middleeast_courtroom_upheaval.bk2"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/middleeast/courtroom_upheaval"
+	option = {
+		name = zombie.15.1
+		highlighted_option = yes
     }
 }
