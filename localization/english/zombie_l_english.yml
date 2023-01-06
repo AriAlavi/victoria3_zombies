@@ -24,7 +24,7 @@
 
 # Events
 
- zombie.14.t:0 "Zombies Expand Their Influence!"
+ zombie.14.t:0 "Zombies Outbreak!"
  zombie.14.d:0 "Yet another nation finds itself in peril"
  zombie.14.f:0 "These undead creatures will destroy the whole world if not stopped!"
  zombie.14.1:0 "Bullets Are the only known cure."
@@ -42,6 +42,6 @@
  zombie_small_frenzy_modifier:0 "Zombies Disgruntled"
  zombie_first_strike_modifier:0 "Recent Zombies Genesis"
  zombies_among_us:0 "Zombies Among Us"
-
+ zombie_scarred:0 "Zombie Scarred"
 
 

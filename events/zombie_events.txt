@@ -509,7 +509,7 @@ zombie.5 = {
 		every_scope_pop = {
 			change_pop_culture = {
 				target = cu:zombie
-				value = 1
+				value = 0.02
 			}
 		}
 	}
@@ -573,10 +573,14 @@ zombie.7 = {
 								name = zombie_desolation
 							}
 						}
-
 					}
 					add_modifier = {
 						name = zombie_nation_modifier
+					}
+					PREVPREV = {
+						add_modifier = {
+							name = zombie_scarred
+						}
 					}
 				}
 			}
@@ -643,11 +647,17 @@ zombie.10 = {
 
 	trigger = {
 		has_building = building_zombie_guerilla
-		not = {
-			any_scope_pop = {
-				has_pop_culture = zombie
+		OR = {
+			owner = {
+				country_has_primary_culture = cu:zombie
+			}
+			not = {
+				any_scope_pop = {
+					has_pop_culture = zombie
+				}
 			}
 		}
+
 	}
 
 	immediate = {
@@ -748,6 +758,12 @@ zombie.12 = {
 						state = this
 						tag = ZOM
 						on_created = {
+							every_scope_pop = {
+								change_pop_culture = {
+									target = cu:zombie
+									value = 1
+								}
+							}
 							set_global_variable = initial_zombies_spawned
 							activate_law = law_type:law_anarchy
 							activate_law = law_type:law_slavery_banned
@@ -812,6 +828,12 @@ zombie.12 = {
 							state = this
 							tag = ZOM
 							on_created = {
+								every_scope_pop = {
+									change_pop_culture = {
+										target = cu:zombie
+										value = 1
+									}
+								}
 								activate_law = law_type:law_anarchy
 								activate_law = law_type:law_slavery_banned
 								add_modifier = {

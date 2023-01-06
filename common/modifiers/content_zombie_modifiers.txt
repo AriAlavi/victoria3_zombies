@@ -64,3 +64,10 @@ zombies_among_us = {
 	state_mortality_mult = 4
 	building_throughput_mult = -0.5
 }
+
+zombie_scarred = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fire_negative.dds
+	state_colony_growth_speed_mult = -0.75
+	state_infrastructure_mult = -1
+	state_birth_rate_mult = 0.1
+}
