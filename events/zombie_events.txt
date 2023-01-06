@@ -592,7 +592,7 @@ zombie.8 = {
 	hidden = yes
 
 	trigger = {
-		exists = c:ZOM
+		exists = controller
 		owner = {
 			country_has_primary_culture = cu:zombie
 		}
@@ -702,37 +702,16 @@ zombie.12 = {
 	immediate = {
 		random_list = {
 			30 = {}
-			10 = {
-				set_variable = {
-					name = zombie_nations
-					value = 10
-				}
+			8 = {
+				set_global_variable  = too_many_zombies_spawned
 				every_country = {
-					if = {
-						limit = {
-							country_has_primary_culture = cu:zombie
-						}
-						change_variable = {
-							name = zombie_nations
-							add = 1
-						}
+					trigger_event = {
+						id = zombie.15
+						days = 1
 					}
 				}
-				if = {
-					limit = {
-						zombie_nations > 3
-					}
-					set_global_variable  = too_many_zombies_spawned
-					every_country = {
-						trigger_event = {
-							id = zombie.15
-							days = 1
-						}
-					}
-				}
-
 			}
-			60 = {
+			62 = {
 				set_global_variable = {
 					name = last_zombie_victim
 					value = root
@@ -747,6 +726,8 @@ zombie.12 = {
 						state = this
 						tag = ZOM
 						on_created = {
+							activate_law = law_type:law_anarchy
+							activate_law = law_type:law_slavery_banned
 							add_modifier = {
 								name = zombie_nation_modifier
 							}
@@ -766,40 +747,7 @@ zombie.12 = {
 								name = zombie_first_strike_modifier
 								months = 6
 							}
-							save_scope_as = created_country					
-					save_scope_as = created_country
-							save_scope_as = created_country					
-					save_scope_as = created_country
-							save_scope_as = created_country					
-					save_scope_as = created_country
-							save_scope_as = created_country					
-							trigger_event = { 
-						trigger_event = { 
-							trigger_event = { 
-						trigger_event = { 
-							trigger_event = { 
-						trigger_event = { 
-							trigger_event = { 
-					trigger_event = { 
-							trigger_event = { 
-					trigger_event = { 
-							trigger_event = { 
-								id = zombie.5
-								days = 1
-								popup = no
-							}
-							create_character = {
-								first_name = Zombie
-								last_name = Z
-								culture = cu:zombie
-								is_general = yes
-								interest_group = ig_landowners
-								ideology = ideology_radical
-								birth_date = 1820.1.1
-								commander_rank = commander_rank_2
-							}	
-					}
-							}	
+							save_scope_as = created_country
 							create_character = {
 								first_name = Zombie
 								last_name = Z
@@ -820,9 +768,15 @@ zombie.12 = {
 								birth_date = 1820.1.1
 								commander_rank = commander_rank_2
 							}	
-					}
-							}	
-					}
+							create_character = {
+								first_name = Zombie
+								last_name = Z
+								culture = cu:zombie
+								is_general = yes
+								interest_group = ig_landowners
+								ideology = ideology_radical
+								birth_date = 1820.1.1
+								commander_rank = commander_rank_2
 							}	
 						}
 					}
@@ -835,6 +789,8 @@ zombie.12 = {
 							state = this
 							tag = ZOM
 							on_created = {
+								activate_law = law_type:law_anarchy
+								activate_law = law_type:law_slavery_banned
 								add_modifier = {
 									name = zombie_nation_modifier
 								}
@@ -897,7 +853,6 @@ zombie.12 = {
 				}
 			}
 		}
-
 	}
 }
 
