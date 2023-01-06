@@ -1,7 +1,7 @@
 ﻿zombie = {
 	color= rgb{ 142 144 111 }
 	religion = zombie
-	traits = { anglophone celtic_people european_heritage }
+	traits = {  }
 	
 	male_common_first_names={
 		Zombie
@@ -30,5 +30,5 @@
 	ethnicities = {
 		1 = caucasian
 	}
-	graphics = european
+	graphics = generic
 }

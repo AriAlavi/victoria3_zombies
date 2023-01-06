@@ -11,6 +11,7 @@ zombie.1 = {
 		NOT = {
 			country_has_primary_culture = cu:zombie
 		}
+		NOT = { is_country_type = decentralized }
 	}
 
 	immediate = {
@@ -19,6 +20,7 @@ zombie.1 = {
 				is_adjacent = ROOT
 				country_has_primary_culture = cu:zombie
 				NOT = { has_war_with = ROOT }
+				NOT = { is_country_type = decentralized }
 			}
 			save_scope_as = zombie_country
 		}
@@ -64,6 +66,20 @@ zombie.2 = {
 	
 	immediate = {
 		every_diplomatic_play = {
+			war = {
+				if = {
+					limit = {
+						OR = {
+							not = { exists = attacker_warleader }
+							not = { exists = defender_warleader }
+						}
+					}
+					prev = {
+						end_play = yes
+					}
+				}
+			}
+
 			limit = {
 				OR = {
 					target = {
@@ -556,9 +572,7 @@ zombie.7 = {
 				on_created = {
 					if = {
 						limit = {
-							PREV = {
-								state_population > 500000000
-							}
+							total_population > 500000000
 						}
 						PREV = {
 							add_modifier = {
