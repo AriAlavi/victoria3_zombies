@@ -7,7 +7,7 @@ zombie.1 = {
 
 	trigger = {
 		exists = c:ZOM
-		this = c:ZOM
+		country_has_primary_culture = cu:zombie
 	}
 
 	immediate = {
@@ -74,8 +74,12 @@ zombie.2 = {
 		every_diplomatic_play = {
 			limit = {
 				OR = {
-					target = c:ZOM
-					initiator = c:ZOM
+					target = {
+						country_has_primary_culture = cu:zombie
+					}
+					initiator = {
+						country_has_primary_culture = cu:zombie
+					}
 				}
 			}
 			war = {
@@ -131,8 +135,12 @@ zombie.3 = {
 
 	trigger = {
 		exists = c:ZOM
-		controller =  c:ZOM
-		NOT = { owner = c:ZOM }
+		controller =  {
+			country_has_primary_culture = cu:zombie
+		}
+		NOT = { owner = {
+			country_has_primary_culture = cu:zombie
+		} }
 		state_region = {
 			is_state_region_land = yes
 		}
@@ -153,7 +161,7 @@ zombie.4 = {
 		if = {
 			limit = {
 				owner = {
-					THIS = c:ZOM
+					country_has_primary_culture = cu:zombie
 				}
 				not = {
 					has_building = building_zombie
@@ -168,7 +176,9 @@ zombie.4 = {
 		else_if = {
 			limit = {
 				owner = {
-					NOT = { THIS = c:ZOM }
+					NOT = { THIS = {
+						country_has_primary_culture = cu:zombie
+					} }
 				}
 				has_building = building_zombie
 			}
@@ -176,7 +186,9 @@ zombie.4 = {
 		}
 		if = {
 			limit = {
-				owner = c:ZOM
+				owner = {
+					country_has_primary_culture = cu:zombie
+				}
 			}
 
 			if = {
@@ -486,19 +498,18 @@ zombie.5 = {
 
 	trigger = {
 		exists = c:ZOM
-		this = c:ZOM
+		country_has_primary_culture = cu:zombie
 	}
 
 	immediate = {
-		c:ZOM = {
-			every_scope_pop = {
-				change_pop_culture = {
-					target = cu:zombie
-					value = 1
-				}
+		every_scope_pop = {
+			change_pop_culture = {
+				target = cu:zombie
+				value = 1
 			}
 		}
 	}
+	
 }
 
 zombie.6 = {
@@ -508,6 +519,9 @@ zombie.6 = {
 			limit = {
 				initiator = ROOT
 				target = c:ZOM
+				target = {
+					NOT = { is_adjacent = ROOT }
+				}
 			}
 			end_play = yes
 		}
@@ -520,7 +534,9 @@ zombie.7 = {
 	hidden = yes
 	trigger = {
 		exists = c:ZOM
-		this = c:ZOM
+		this = {
+			country_has_primary_culture = cu:zombie
+		}
 	}
 	immediate = {
 		every_scope_state = {
@@ -543,8 +559,12 @@ zombie.8 = {
 
 	trigger = {
 		exists = c:ZOM
-		owner = c:ZOM
-		NOT = { controller = c:ZOM }
+		owner = {
+			country_has_primary_culture = cu:zombie
+		}
+		NOT = { controller = {
+			country_has_primary_culture = cu:zombie
+		} }
 		state_region = {
 			is_state_region_land = yes
 		}
@@ -603,46 +623,28 @@ zombie.10 = {
 zombie.11 = {
 	type = country_event
 	placement = root
-	title = zombie.11.t
-	desc = zombie.11.d
-	flavor = zombie.11.f
-	icon = "gfx/interface/icons/event_icons/event_skull.dds"
+	hidden = yes
+	
 	trigger = {
 		exists = c:ZOM
-		c:ZOM = {
-			NOT = { has_modifier = zombie_small_frenzy_modifier }
+		this = {
+			country_has_primary_culture = cu:zombie
 		}
 	}
-	duration = 3
 
-	event_image = {
-		video = "gfx/event_pictures/middleeast_courtroom_upheaval.bk2"
-	}
-
-	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
-	on_opened_soundeffect = "event:/SFX/Events/middleeast/courtroom_upheaval"
 
 	immediate = {
-		if = {
-			limit = {
-				this = c:ZOM
-			}
-			add_modifier = {
-				name = zombie_insane_frenzy_modifier
-				months = 12
-			}
-			add_modifier = {
-				name = zombie_frenzy_modifier
-				months = 24
-			}
-			add_modifier = {
-				name = zombie_small_frenzy_modifier
-				months = 36
-			}
+		add_modifier = {
+			name = zombie_insane_frenzy_modifier
+			months = 12
 		}
-	}
-	option = {
-		name = zombie.11.o
-		highlighted_option = yes
+		add_modifier = {
+			name = zombie_frenzy_modifier
+			months = 24
+		}
+		add_modifier = {
+			name = zombie_small_frenzy_modifier
+			months = 36
+		}
 	}
 }
