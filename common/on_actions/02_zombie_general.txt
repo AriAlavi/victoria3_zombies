@@ -4,11 +4,13 @@ on_monthly_pulse_country = {
 		zombie.2 # infinite war support
 		zombie.7 # decolonize automatically
 		zombie.5 # convert pops to zombies
+		zombie.13 # Spawn zombie instantly
 	}
 }
 on_yearly_pulse_country = {
 	random_events = {
-		7 = zombie.11 # Get buffs back
+		1 = zombie.11 # Get buffs back
+		7 = 0
 	}
 }
 

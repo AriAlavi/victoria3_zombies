@@ -1,0 +1,9 @@
+on_monthly_pulse_country = {
+	events = {
+
+	}
+	random_events = {
+		1 = zombie.12 # Random zombie nation spawn
+		1 = 0
+	}
+}

@@ -2,7 +2,7 @@ zombie_nation_modifier = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_lightbulb_negative.dds
 	state_standard_of_living_add = -100
 	state_birth_rate_mult = -1
-	state_mortality_mult = 9
+	state_mortality_mult = 6
 	unit_offense_mult = 0.50
 	unit_defense_mult = 0.20
 	country_tax_income_add = 100000000
@@ -22,12 +22,14 @@ zombie_nation_modifier = {
 zombie_desolation = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_lightbulb_negative.dds
 	state_mortality_mult = 2
+	state_colony_growth_speed_mult = -1
 }
 
 zombie_insane_frenzy_modifier = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_lightbulb_negative.dds
 	unit_offense_add = 20
 	unit_defense_add = 25
+	unit_advancement_speed_mult = 0.1
 }
 
 
@@ -35,10 +37,22 @@ zombie_frenzy_modifier = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_lightbulb_negative.dds
 	unit_offense_add = 20
 	unit_defense_add = 25
+	unit_advancement_speed_mult = 0.1
 }
 
 zombie_small_frenzy_modifier = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_lightbulb_negative.dds
 	unit_offense_add = 20
 	unit_defense_add = 25
+	unit_advancement_speed_mult = 0.1
+}
+
+zombie_first_strike_modifier = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_lightbulb_negative.dds
+	unit_offense_add = 75
+	unit_defense_add = 75
+	unit_advancement_speed_mult = 1
+	state_mortality_mult = -1
+	state_birth_rate_mult = 9
+	unit_provinces_lost_mult = -0.5
 }

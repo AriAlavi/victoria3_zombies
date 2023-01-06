@@ -134,7 +134,8 @@ zombie.3 = {
 	hidden = yes
 
 	trigger = {
-		exists = c:ZOM
+		exists = controller
+		exists = owner
 		controller =  {
 			country_has_primary_culture = cu:zombie
 		}
@@ -147,7 +148,7 @@ zombie.3 = {
 	}
 
 	immediate = {
-		set_state_owner = c:ZOM
+		set_state_owner = controller
 	}
 }
 
@@ -517,11 +518,11 @@ zombie.6 = {
 	immediate = {
 		every_diplomatic_play = {
 			limit = {
-				initiator = ROOT
-				target = c:ZOM
-				target = {
+				initiator = {
+					country_has_primary_culture = cu:zombie
 					NOT = { is_adjacent = ROOT }
 				}
+				target = ROOT
 			}
 			end_play = yes
 		}
@@ -535,17 +536,49 @@ zombie.7 = {
 	trigger = {
 		exists = c:ZOM
 		this = {
-			country_has_primary_culture = cu:zombie
+			NOT = { is_country_type = decentralized }
 		}
 	}
 	immediate = {
 		every_scope_state = {
 			limit = {
-				state_population < 10000
+				exists = yes
+				OR = {
+					AND = {
+						OR = {
+							state_population < 10000
+							state_population > 50000000
+						}
+						owner = {
+							country_has_primary_culture = cu:zombie
+						}
+					}
+					state_population > 500000000
+				}
+
+				
 			}
 			create_country = {
 				state = this
 				tag = BIE
+				on_created = {
+					if = {
+						limit = {
+							PREV = {
+								state_population > 500000000
+							}
+						}
+						PREV = {
+							add_modifier = {
+								name = zombie_desolation
+							}
+						}
+
+					}
+					add_modifier = {
+						name = zombie_nation_modifier
+					}
+				}
 			}
 
 		}
@@ -647,4 +680,169 @@ zombie.11 = {
 			months = 36
 		}
 	}
+}
+
+# Spawn zombie nation
+zombie.12 = {
+	type = country_event
+	placement = root
+	hidden = yes
+	
+	trigger = {
+		total_population > 1000000
+		NOT = { country_has_primary_culture = cu:zombie }
+		NOT = { has_global_variable = too_many_zombies_spawned }
+		NOT = { is_country_type = decentralized }
+		is_player = no
+		year < 1850
+	}
+
+
+	immediate = {
+		random_list = {
+			80 = {}
+			20 = {
+				set_global_variable  = too_many_zombies_spawned
+			}
+		}
+		set_global_variable = {
+			name = last_zombie_victim
+			value = root
+		}
+		random_state = {
+			limit = {
+				state_population > 250000
+				owner = root
+				controller = root
+			}
+			create_country = {
+				state = this
+				tag = ZOM
+				on_created = {
+					add_modifier = {
+						name = zombie_nation_modifier
+					}
+					add_modifier = {
+						name = zombie_insane_frenzy_modifier
+						months = 12
+					}
+					add_modifier = {
+						name = zombie_frenzy_modifier
+						months = 24
+					}
+					add_modifier = {
+						name = zombie_small_frenzy_modifier
+						months = 36
+					}
+					add_modifier = {
+						name = zombie_first_strike_modifier
+						months = 6
+					}
+					save_scope_as = created_country
+					every_country = {
+						trigger_event = { 
+							id = zombie.14
+							days = 1
+						}
+					}
+					
+					trigger_event = { 
+						id = zombie.5
+						days = 1
+						popup = no
+					}
+				}
+			}
+			random_neighbouring_state = {
+				limit = {
+					owner = root
+					controller = root
+				}
+				create_country = {
+					state = this
+					tag = ZOM
+					on_created = {
+						add_modifier = {
+							name = zombie_nation_modifier
+						}
+						add_modifier = {
+							name = zombie_insane_frenzy_modifier
+							months = 12
+						}
+						add_modifier = {
+							name = zombie_frenzy_modifier
+							months = 24
+						}
+						add_modifier = {
+							name = zombie_small_frenzy_modifier
+							months = 36
+						}
+						add_modifier = {
+							name = zombie_first_strike_modifier
+							months = 6
+						}
+						save_scope_as = created_country
+					}
+				}
+			}
+		}
+	}
+}
+
+# Immediately fire zombie spawn
+zombie.13 = {
+	type = country_event
+	placement = root
+	duration = 1
+
+	trigger = {
+		total_population > 1000000
+		NOT = { has_global_variable = initial_zombies_spawned }
+	}
+
+	immediate = {
+		set_global_variable = initial_zombies_spawned
+		random_country = {
+			limit = {
+				total_population > 10000000
+				NOT = { country_has_primary_culture = cu:zombie }
+				NOT = { has_global_variable = too_many_zombies_spawned }
+				NOT = { is_country_type = decentralized }
+				is_player = no
+			}
+			trigger_event = { 
+				id = zombie.12
+				days = 1
+				popup = yes
+			}
+		}
+	}
+}
+
+# Notify of zombie invasion
+zombie.14 = {
+	type = country_event
+	placement = root
+	title = example_event.14.t
+	desc = example_event.14.d
+	flavor = example_event.14.f
+	duration = 3
+	icon = "gfx/interface/icons/event_icons/event_skull.dds"
+
+
+	event_image = {
+		video = "gfx/event_pictures/middleeast_courtroom_upheaval.bk2"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/middleeast/courtroom_upheaval"
+
+	option = {
+		name = example_event.2.1
+		highlighted_option = yes
+		change_relations = {
+			country = global_var:last_zombie_victim
+			value = 100
+		}
+    }
 }
