@@ -1,7 +1,10 @@
 peace_zombies_decision = {
 	is_shown = {
-		exists = c:ZOM
-		has_war_with = c:ZOM
+		any_country = {
+			country_has_primary_culture = cu:zombie
+			exists = yes
+			has_war_with = ROOT
+		}
 		is_subject = no
 	}
 

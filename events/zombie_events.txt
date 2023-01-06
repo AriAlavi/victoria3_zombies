@@ -6,7 +6,6 @@ zombie.1 = {
 	hidden = yes
 
 	trigger = {
-		exists = c:ZOM
 		exists = yes
 		NOT = {
 			country_has_primary_culture = cu:zombie
@@ -60,9 +59,6 @@ zombie.1 = {
 zombie.2 = {
 	hidden = yes
 	placement = ROOT	
-	trigger = {
-		exists = c:ZOM
-	}
 	
 	immediate = {
 		every_diplomatic_play = {
@@ -506,7 +502,6 @@ zombie.5 = {
 	
 
 	trigger = {
-		exists = c:ZOM
 		country_has_primary_culture = cu:zombie
 	}
 
@@ -542,7 +537,6 @@ zombie.7 = {
 	placement = ROOT
 	hidden = yes
 	trigger = {
-		exists = c:ZOM
 		this = {
 			NOT = { is_country_type = decentralized }
 		}
@@ -665,7 +659,6 @@ zombie.11 = {
 	hidden = yes
 	
 	trigger = {
-		exists = c:ZOM
 		this = {
 			country_has_primary_culture = cu:zombie
 		}
