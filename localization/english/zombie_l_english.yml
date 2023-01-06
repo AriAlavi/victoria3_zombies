@@ -1,7 +1,11 @@
 ﻿l_english:
+# Cultures
+
  ZOM:0 "Zombies"
  ZOM_ADJ:0 "Zombie"
  BIE:0 "Uncolonized Zombie"
+
+# Buildings / PM / PMG / economic etc..
 
  building_zombie:0 "Zombie Horde"
  building_zombie_guerilla:0 "Zombie Resistance"
@@ -18,6 +22,8 @@
  zombies_no_icon:0 "Zombies"
  zombies_desc:0 "This will be horrible for the economy!"
 
+# Events
+
  zombie.14.t:0 "Zombies Expand Their Influence!"
  zombie.14.d:0 "Yet another nation finds itself in peril"
  zombie.14.f:0 "These undead creatures will destroy the whole world if not stopped!"
@@ -27,3 +33,28 @@
  zombie.15.d:0 "There will be no future zombie outbreaks. Those that already exist will continue to expand."
  zombie.15.f:0 "News has reached us that the cause of the constant zombie outbreaks has been found. The disease originates in bats. They are now being driven to extinction."
  zombie.15.1:0 "Still, it is too late for millions."
+
+# Modifiers
+
+ zombie_nation_modifier:0 "Zombie Nation"
+ zombie_nation_modifier_desc:0 "You know, these type of states don't follow traditional economic models!"
+
+ zombie_desolation:0 "Zombie Desolation"
+ zombie_desolation_desc:0 "This place is no longer habitable to even zombies."
+
+ zombie_insane_frenzy_modifier:0 "Insane Zombie Frenzy"
+ zombie_insane_frenzy_modifier_desc:0 "The zombies are ravenous. Not even guns are stopping them."
+
+ zombie_frenzy_modifier:0 "Zombie Frency"
+ zombie_frenzy_modifier_desc:0 "This zombie horde is in a frenzied state - how long can they keep this up for?"
+
+ zombie_small_frenzy_modifier:0 "Zombies Disgruntled"
+ zombie_small_frenzy_modifier_desc:0 "The zombies would prefer not to starve."
+
+ zombie_first_strike_modifier:0 "Recent Zombies Genesis"
+ zombie_first_strike_modifier_desc:0 "This zombie horde counts very few generations between it and patient zero. The virus is still very strong."
+
+ zombies_among_us:0 "Zombies Among Us"
+ zombies_among_us_desc:0 "While this province has formally been taken back into human hands, there still remain some imposters, who pretend to be human."
+
+

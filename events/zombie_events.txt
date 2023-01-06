@@ -39,7 +39,7 @@ zombie.1 = {
 					name = zombie_invasion
 					war = yes
 					type = dp_humiliation
-					target_state =root.capital
+					target_state = root.capital
 					
 					add_war_goal = {
 						holder = root
@@ -630,6 +630,9 @@ zombie.9 = {
 			level=1
 			reserves=1
 		}
+		add_modifier = {
+			name = zombies_among_us
+		}
 	}
 }
 # Delete leftover zombie guerillas
@@ -649,6 +652,7 @@ zombie.10 = {
 
 	immediate = {
 		remove_building = building_zombie_guerilla
+		remove_modifier = zombies_among_us
 	}
 }
 
@@ -916,11 +920,10 @@ zombie.14 = {
 
 
 	event_image = {
-		video = "gfx/event_pictures/middleeast_courtroom_upheaval.bk2"
+		video = "gfx/event_pictures/unspecific_devastation.bk2"
 	}
 
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
-	on_opened_soundeffect = "event:/SFX/Events/middleeast/courtroom_upheaval"
 
 	option = {
 		name = zombie.14.1
@@ -940,15 +943,15 @@ zombie.15 = {
 	desc = zombie.15.d
 	flavor = zombie.15.f
 	duration = 3
-	icon = "gfx/interface/icons/event_icons/event_skull.dds"
+	icon = "gfx/interface/icons/event_icons/event_industry.dds"
 
 
 	event_image = {
-		video = "gfx/event_pictures/middleeast_courtroom_upheaval.bk2"
+		video = "gfx/event_pictures/unspecific_ruler_speaking_to_people.bk2"
 	}
 
 	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
-	on_opened_soundeffect = "event:/SFX/Events/middleeast/courtroom_upheaval"
+
 	option = {
 		name = zombie.15.1
 		highlighted_option = yes
