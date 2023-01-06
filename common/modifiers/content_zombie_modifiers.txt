@@ -58,7 +58,7 @@ zombie_first_strike_modifier = {
 }
 
 zombies_among_us = {
-	icon = gfx/interface/icons/timed_modifier_icons/modifier_imposter_positive.dds
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_imposter_negative.dds
 	state_infrastructure_mult = -0.5
 	state_disallow_incorporation = yes
 	state_mortality_mult = 4
