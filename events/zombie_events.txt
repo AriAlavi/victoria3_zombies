@@ -8,6 +8,9 @@ zombie.1 = {
 	trigger = {
 		exists = c:ZOM
 		exists = yes
+		NOT = {
+			country_has_primary_culture = cu:zombie
+		}
 	}
 
 	immediate = {
