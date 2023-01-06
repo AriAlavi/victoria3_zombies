@@ -7,7 +7,6 @@ zombie.1 = {
 
 	trigger = {
 		exists = c:ZOM
-		country_has_primary_culture = cu:zombie
 		exists = yes
 	}
 
@@ -15,54 +14,43 @@ zombie.1 = {
 		every_country = {
 			limit = {
 				is_adjacent = ROOT
+				country_has_primary_culture = cu:zombie
 				NOT = { has_war_with = ROOT }
-				NOT = { country_has_primary_culture = cu:zombie }
-				NOT = { is_country_type = decentralized }
-				total_population > 0
-				exists = yes
+			}
+			save_scope_as = zombie_country
+		}
+		if = {
+			limit = {
+				exists = scope:zombie_country
 			}
 			if = {
 				limit = {
 					is_subject = yes
+					NOT = { is_subject_type = subject_type_customs_union }
 				}
-				overlord = {
-					save_scope_as = target_country
-				}
-				
-			}else = {
-				save_scope_as = target_country
+				make_independent = yes
 			}
-			change_relations = {
-				country = ROOT
-				value = -400
-			}
-			if = {
-				limit = {
-					scope:target_country = {
-						NOT = { has_war_with = ROOT }
+			scope:zombie_country = {
+				create_diplomatic_play = {
+					name = zombie_invasion
+					war = yes
+					type = dp_humiliation
+					target_state =root.capital
+					
+					add_war_goal = {
+						holder = root
+						type = humiliation
+						target_state = scope:zombie_country.capital
 					}
-				}
-				root = {
-					create_diplomatic_play = {
-						name = zombie_invasion
-						war = yes
-						type = dp_humiliation
-						target_state = scope:target_country.capital
-						
-						add_war_goal = {
-							holder = scope:target_country
-							type = humiliation
-							target_state = root.capital
-						}
-						
-					}	
-				}
+					
+				}		
 			}
 
-
+		
 		}
 	}
 }
+
 
 zombie.2 = {
 	hidden = yes
@@ -694,22 +682,42 @@ zombie.12 = {
 		NOT = { country_has_primary_culture = cu:zombie }
 		NOT = { has_global_variable = too_many_zombies_spawned }
 		NOT = { is_country_type = decentralized }
+		num_states > 2
 		is_player = no
-		year < 1850
+		year < 1838
 	}
 
 
 	immediate = {
 		random_list = {
-			30 = {}
-			8 = {
-				set_global_variable  = too_many_zombies_spawned
-				every_country = {
-					trigger_event = {
-						id = zombie.15
-						days = 1
+			30 = {
+				if = {
+					limit = {
+						year > 1837
+					}
+					set_global_variable  = too_many_zombies_spawned
+					every_country = {
+						trigger_event = {
+							id = zombie.15
+							days = 1
+						}
 					}
 				}
+			}
+			8 = {
+				if = {
+					limit = {
+						year > 1836
+					}
+					set_global_variable  = too_many_zombies_spawned
+					every_country = {
+						trigger_event = {
+							id = zombie.15
+							days = 1
+						}
+					}
+				}
+
 			}
 			62 = {
 				set_global_variable = {
@@ -726,6 +734,7 @@ zombie.12 = {
 						state = this
 						tag = ZOM
 						on_created = {
+							set_global_variable = initial_zombies_spawned
 							activate_law = law_type:law_anarchy
 							activate_law = law_type:law_slavery_banned
 							add_modifier = {
@@ -868,7 +877,6 @@ zombie.13 = {
 	}
 
 	immediate = {
-		set_global_variable = initial_zombies_spawned
 		random_country = {
 			limit = {
 				total_population > 10000000

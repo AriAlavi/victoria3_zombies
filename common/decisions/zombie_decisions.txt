@@ -6,24 +6,14 @@ peace_zombies_decision = {
 	}
 
 	possible = {
-		OR = {
-			AND = {
-				any_subject_or_below = {
-					any_scope_war = {
-						OR = {
-							NOT = { attacker_warleader = {
-								country_has_primary_culture = zombie
-							}}
-							any_scope_front = {
-								always = no
-							}
-						}
-					}
+		any_country = {
+			NOT = {
+				AND = {
+					country_has_primary_culture = cu:zombie
+					is_adjacent = ROOT
 				}
-
 			}
 		}
-
 	}
 
 	when_taken = {
