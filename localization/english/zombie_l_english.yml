@@ -1,3 +1,15 @@
 ﻿l_english:
- ZOM:0 "Zombie"
+ ZOM:0 "Zombies"
  BIE:0 "Uncolonized Zombie"
+
+ zombie.14.t:0 "Zombies Expand Their Influence!"
+ zombie.14.d:0 "Yet another nation finds itself in peril"
+ zombie.14.f:0 "These undead creatures will destroy the whole world if not stopped!"
+ zombie.14.1:0 "Bullets Are the only known cure."
+ zombie.14.2:0 "Bullets Are the only known cure."
+
+
+ zombie.15.t:0 "Source of Zombie Outbreaks Identified"
+ zombie.15.d:0 "There will be no future zombie outbreaks. Those that already exist will continue to expand."
+ zombie.15.f:0 "News has reached us that the cause of the constant zombie outbreaks has been found. The disease originates in bats. They are now being driven to extinction."
+ zombie.15.1:0 "Still, it is too late for millions."
