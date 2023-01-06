@@ -1,6 +1,22 @@
 ﻿l_english:
  ZOM:0 "Zombies"
+ ZOM_ADJ:0 "Zombie"
  BIE:0 "Uncolonized Zombie"
+
+ building_zombie:0 "Zombie Horde"
+ building_zombie_guerilla:0 "Zombie Resistance"
+
+ modifier_building_zombies_mortality_mult:0 "Zombie Mortality"
+ pmg_zombies:0 "Zombie Horde Production"
+ pm_zombie_infantry:0 "Zombie Horde"
+
+ zombie:0 "Zombie"
+ zom_adj:0 "Zombie"
+
+ zombies:0 "Zombies"
+ zombies_only_icon:0 "Zombies"
+ zombies_no_icon:0 "Zombies"
+ zombies_desc:0 "This will be horrible for the economy!"
 
  zombie.14.t:0 "Zombies Expand Their Influence!"
  zombie.14.d:0 "Yet another nation finds itself in peril"
