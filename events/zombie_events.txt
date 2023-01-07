@@ -509,7 +509,7 @@ zombie.5 = {
 		every_scope_pop = {
 			change_pop_culture = {
 				target = cu:zombie
-				value = 0.02
+				value = 0.1
 			}
 		}
 	}
@@ -560,6 +560,10 @@ zombie.7 = {
 
 				
 			}
+			add_modifier = {
+				name = zombie_scarred
+				years = 30
+			}
 			create_country = {
 				state = this
 				tag = BIE
@@ -576,11 +580,6 @@ zombie.7 = {
 					}
 					add_modifier = {
 						name = zombie_nation_modifier
-					}
-					PREVPREV = {
-						add_modifier = {
-							name = zombie_scarred
-						}
 					}
 				}
 			}

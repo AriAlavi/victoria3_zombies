@@ -11,8 +11,12 @@
  building_zombie_guerilla:0 "Zombie Resistance"
 
  modifier_building_zombies_mortality_mult:0 "Zombie Mortality"
+ modifier_building_zombies_mortality_mult_desc:0 "Curing the infection...one bullet at a time"
  pmg_zombies:0 "Zombie Horde Production"
  pm_zombie_infantry:0 "Zombie Horde"
+
+ pmg_guerilla:0 "Zombie Resistance"
+ pm_zombie_eradication:0 "Zombie Hunting"
 
  zombie:0 "Zombie"
  zom_adj:0 "Zombie"
