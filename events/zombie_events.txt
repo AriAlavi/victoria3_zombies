@@ -979,3 +979,25 @@ zombie.15 = {
 		highlighted_option = yes
     }
 }
+
+# No one likes zombies
+zombie.16 = {
+	type = country_event
+	placement = root
+	trigger = {
+		country_has_primary_culture = cu:zombie
+	}
+	immediate = {
+		every_country = {
+			if = {
+				limit = {
+					THIS != ROOT
+				}
+				change_relations = {
+					country = ROOT
+					value = -1000
+				}
+			}
+		}
+	}
+}
