@@ -1,6 +1,6 @@
 ﻿zombie = {
 	color= rgb{ 142 144 111 }
-	religion = zombie
+	religion = undead
 	traits = {  }
 	
 	male_common_first_names={

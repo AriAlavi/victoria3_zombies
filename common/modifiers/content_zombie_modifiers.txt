@@ -1,12 +1,11 @@
 zombie_nation_modifier = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
-	state_standard_of_living_add = -100
 	state_birth_rate_mult = -1
-	state_mortality_mult = 6
+	state_mortality_mult = 4
 	unit_offense_mult = 0.50
 	unit_defense_mult = 0.20
 	country_tax_income_add = 100000000
-	country_legitimacy_base_add = -1
+	country_legitimacy_base_add = -100
 	country_authority_mult = -1
 	country_influence_mult = -1
 	country_bureaucracy_add = 1000000
@@ -17,6 +16,9 @@ zombie_nation_modifier = {
 	country_production_weekly_innovation_mult = -1
 	country_society_weekly_innovation_mult = -1
 	country_prestige_mult = -1
+	country_disallow_migration = yes
+	state_standard_of_living_add = -100
+	state_zombie_standard_of_living_add = 200
 }
 
 zombie_desolation = {
@@ -52,7 +54,7 @@ zombie_first_strike_modifier = {
 	unit_offense_add = 75
 	unit_defense_add = 75
 	unit_advancement_speed_mult = 1
-	state_mortality_mult = -1
+	state_mortality_mult = -0.95
 	state_birth_rate_mult = 9
 	unit_provinces_lost_mult = -0.5
 }
@@ -61,13 +63,15 @@ zombies_among_us = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_imposter_negative.dds
 	state_infrastructure_mult = -0.5
 	state_disallow_incorporation = yes
-	state_mortality_mult = 4
+	state_mortality_mult = 3
 	building_throughput_mult = -0.5
+	state_migration_push_mult = -1
+	state_migration_pull_mult = -1
 }
 
 zombie_scarred = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_fire_negative.dds
-	state_colony_growth_speed_mult = -0.75
+	state_colony_growth_speed_mult = -0.90
 	state_infrastructure_mult = -0.1
 	state_birth_rate_mult = 1
 }

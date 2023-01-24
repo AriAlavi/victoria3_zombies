@@ -548,7 +548,7 @@ zombie.7 = {
 				OR = {
 					AND = {
 						OR = {
-							state_population < 10000
+							state_population < 30000
 							state_population > 50000000
 						}
 						owner = {
@@ -764,7 +764,9 @@ zombie.12 = {
 								}
 							}
 							set_global_variable = initial_zombies_spawned
+							activate_law = law_type:law_ethnostate
 							activate_law = law_type:law_anarchy
+							activate_law = law_type:law_isolationism
 							activate_law = law_type:law_slavery_banned
 							add_modifier = {
 								name = zombie_nation_modifier
@@ -833,7 +835,9 @@ zombie.12 = {
 										value = 1
 									}
 								}
+								activate_law = law_type:law_ethnostate
 								activate_law = law_type:law_anarchy
+								activate_law = law_type:law_isolationism
 								activate_law = law_type:law_slavery_banned
 								add_modifier = {
 									name = zombie_nation_modifier
@@ -998,5 +1002,36 @@ zombie.16 = {
 				}
 			}
 		}
+	}
+}
+
+# Slowly covert zombies to primary culture
+zombie.17 = {
+	type = state_event
+	placement = root
+	trigger = {
+		controller = {
+			NOT = { country_has_primary_culture = cu:zombie }
+		}
+		has_modifier = zombies_among_us
+	}
+	immediate = {
+		random_primary_culture = {
+			limit = {
+				always = yes
+			}
+			PREV = {
+				every_scope_pop = {
+					limit = {
+						has_pop_culture = zombie
+					}
+					change_pop_culture = {
+						target = PREVPREV
+						value = 0.04
+					}
+				}
+			}
+		}
+
 	}
 }

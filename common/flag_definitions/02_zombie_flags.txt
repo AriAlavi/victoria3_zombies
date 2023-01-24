@@ -1,0 +1,5 @@
+ZOM = {
+	flag_definition = {
+		coa = ZOM
+	}
+}

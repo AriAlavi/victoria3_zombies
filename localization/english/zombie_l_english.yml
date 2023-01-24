@@ -4,6 +4,7 @@
  ZOM:0 "Zombies"
  ZOM_ADJ:0 "Zombie"
  BIE:0 "Uncolonized Zombie"
+ BIE_ADJ:0 "Zombie"
 
 # Buildings / PM / PMG / economic etc..
 
@@ -20,6 +21,9 @@
 
  zombie:0 "Zombie"
  zom_adj:0 "Zombie"
+
+ undead:0 "Undead"
+ undead_adj:0 "Undead"
 
  zombies:0 "Zombies"
  zombies_only_icon:0 "Zombies"

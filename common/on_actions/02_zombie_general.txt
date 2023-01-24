@@ -22,5 +22,6 @@ on_monthly_pulse_state = {
 		zombie.9 # create zombie guerillas
 		zombie.10 # destroy zombie guerillas
 		zombie.4 # create zombie buildings
+		zombie.17 # convert zombies back to humans
 	}
 }
