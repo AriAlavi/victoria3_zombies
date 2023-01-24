@@ -1,7 +1,7 @@
 zombie_nation_modifier = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
 	state_birth_rate_mult = -1
-	state_mortality_mult = 4
+	state_mortality_mult = 6
 	unit_offense_mult = 0.50
 	unit_defense_mult = 0.20
 	country_tax_income_add = 100000000
